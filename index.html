@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0a8f3c" />
+<title>A taça será nossa, e o churrasco também! 🌎🍗 — Niver do PV</title>
+<meta name="description" content="Venha celebrar o niver do Paulo Victor estilo Copa em Cabo Frio (Foguete), 10 a 12/07. Confirma tua escalação! ⚽🍗" />
+
+<!-- ===== Open Graph (preview bonito no WhatsApp/redes) =====
+     OBS: para o preview do zap funcionar, o site precisa estar HOSPEDADO (https).
+     Troque a URL abaixo pela URL pública real quando publicar. -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="A taça será nossa, e o churrasco também! 🌎🍗" />
+<meta property="og:description" content="Niver do PV estilo Copa em Cabo Frio (Foguete), 10–12/07. Confirma tua escalação! ⚽" />
+<meta property="og:image" content="assets/hero.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+/* =========================================================
+   TEMA COPA — variáveis de cor (com modo escuro)
+   ========================================================= */
+:root{
+  --verde:#0a8f3c; --verde-esc:#076b2c;
+  --amarelo:#ffcf1f; --amarelo-esc:#e6b400;
+  --azul:#1f4fb0; --gramado:#0e7a36;
+  --bg:#f4f7f2; --surface:#ffffff; --texto:#15231a; --texto-suave:#4a5a50;
+  --borda:#dde6dd; --sombra:0 6px 20px rgba(0,0,0,.10);
+  --radius:18px; --maxw:560px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0e1512; --surface:#16201b; --texto:#eaf2ec; --texto-suave:#a8bdb0;
+    --borda:#26342c; --sombra:0 6px 22px rgba(0,0,0,.45); }
+}
+html[data-theme="dark"]{ --bg:#0e1512; --surface:#16201b; --texto:#eaf2ec; --texto-suave:#a8bdb0;
+  --borda:#26342c; --sombra:0 6px 22px rgba(0,0,0,.45); }
+html[data-theme="light"]{ --bg:#f4f7f2; --surface:#ffffff; --texto:#15231a; --texto-suave:#4a5a50;
+  --borda:#dde6dd; --sombra:0 6px 20px rgba(0,0,0,.10); }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important}
+}
+body{ margin:0; background:var(--bg); color:var(--texto);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.5; -webkit-text-size-adjust:100%; overflow-x:hidden; }
+.titulo{ font-family:"Arial Narrow","Oswald",system-ui,sans-serif;
+  text-transform:uppercase; letter-spacing:.5px; line-height:1.05; font-weight:800; }
+img{max-width:100%; display:block}
+a{color:inherit}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+section{padding:38px 0; scroll-margin-top:64px}
+h2.sec{font-size:1.6rem; margin:0 0 4px; color:var(--verde)}
+.sub{color:var(--texto-suave); margin:0 0 18px; font-size:.98rem}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:var(--verde);box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.nav .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px;padding:8px 10px}
+.nav a{flex:0 0 auto;color:#fff;text-decoration:none;font-size:.78rem;padding:5px 9px;border-radius:999px;white-space:nowrap;opacity:.92;background:rgba(255,255,255,.10)}
+.nav a:hover,.nav a:focus{background:rgba(255,255,255,.24);opacity:1}
+.nav .theme-btn{flex:0 0 auto;background:rgba(255,255,255,.16);border:0;color:#fff;border-radius:999px;padding:5px 9px;cursor:pointer;font-size:.9rem}
+/* Em telas pequenas a barra com todos os chips fica alta -> não fixa (rola junto) */
+@media (max-width:600px){ .nav{position:static} }
+
+/* HERO */
+.hero{position:relative;color:#fff;text-align:center;background:#063d1c;overflow:hidden}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,40,18,.35) 0%,rgba(4,40,18,.55) 55%,rgba(4,40,18,.92) 100%)}
+.hero .conteudo{position:relative;z-index:2;padding:54px 18px 40px}
+.hero .badge{display:inline-block;background:var(--amarelo);color:#1a1a00;font-weight:800;font-size:.78rem;letter-spacing:1px;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+.hero h1{font-size:2.05rem;margin:14px 0 6px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero .data{font-size:1.05rem;font-weight:700;margin:8px 0 2px}
+.hero .data .pin{color:var(--amarelo)}
+.hero .sub-hero{font-size:.95rem;opacity:.92;max-width:380px;margin:6px auto 0}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font-weight:800;padding:15px 22px;border-radius:14px;font-size:1.05rem;line-height:1.15;transition:transform .12s ease, box-shadow .12s ease;font-family:inherit}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-cta{background:var(--amarelo);color:#1a1500;box-shadow:0 6px 0 var(--amarelo-esc)}
+.btn-cta:hover{box-shadow:0 4px 0 var(--amarelo-esc);transform:translateY(2px)}
+.btn-verde{background:var(--verde);color:#fff;box-shadow:0 5px 0 var(--verde-esc)}
+.btn-azul{background:var(--azul);color:#fff}
+.btn-wpp{background:#25d366;color:#073b21;box-shadow:0 5px 0 #149a4b}
+.btn-block{display:flex;width:100%;margin-top:14px}
+.hero .btn-cta{margin-top:20px;font-size:1.15rem;padding:17px 26px}
+.btn[disabled]{opacity:.55;cursor:default}
+
+/* COUNTDOWN */
+.countdown{background:linear-gradient(135deg,var(--verde),var(--gramado));color:#fff;text-align:center}
+.cd-grid{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.cd-item{background:rgba(0,0,0,.22);border-radius:14px;padding:12px 6px;min-width:66px;flex:1;max-width:84px}
+.cd-num{font-size:2rem;font-weight:800;font-family:"Arial Narrow",system-ui;line-height:1}
+.cd-lab{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;opacity:.9;margin-top:4px}
+.cd-frase{font-size:1.15rem;font-weight:700;margin:0}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--borda);border-radius:var(--radius);box-shadow:var(--sombra);padding:16px;margin-bottom:14px}
+
+/* PROGRAMAÇÃO */
+.dia{display:flex;gap:12px;align-items:flex-start}
+.dia .num{flex:0 0 auto;width:56px;height:56px;border-radius:14px;background:var(--verde);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1}
+.dia .num .d{font-size:1.4rem;font-family:"Arial Narrow",system-ui}
+.dia .num .m{font-size:.62rem;text-transform:uppercase;letter-spacing:1px}
+.dia .info h3{margin:0 0 2px;font-size:1.05rem}
+.dia .info .badge-dia{display:inline-block;background:var(--amarelo);color:#1a1500;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.5px}
+.dia .info p{margin:6px 0 0;color:var(--texto-suave)}
+
+/* A CASA */
+.dados-casa{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.chip{background:var(--bg);border:1px solid var(--borda);border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:600}
+.comodidades{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.9rem}
+.comodidades li::before{content:"✅ ";}
+.disclaimer{font-size:.78rem;color:var(--texto-suave);font-style:italic;margin-top:10px}
+
+/* GALERIA */
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.foto{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--borda);cursor:pointer;border:0;padding:0}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto.ph{display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,var(--verde),var(--azul));color:#fff;font-weight:700;font-size:.85rem;padding:10px}
+.foto.ph::after{content:"📷 Foto da casa";white-space:pre}
+
+/* PLANTA SVG */
+.planta-wrap{background:var(--surface);border:1px solid var(--borda);border-radius:var(--radius);box-shadow:var(--sombra);padding:12px;overflow:hidden}
+.planta-wrap svg{width:100%;height:auto;display:block;touch-action:manipulation}
+.cell rect{transition:fill .15s ease}
+.cell.click{cursor:pointer}
+.cell.click:hover rect, .cell.click:focus rect, .cell.active rect{fill:var(--amarelo)}
+.cell.click:hover text, .cell.click:focus text, .cell.active text{fill:#1a1500}
+.cell text{pointer-events:none;font-weight:700}
+.planta-legenda{text-align:center;font-weight:700;margin:10px 0 0;min-height:1.4em;color:var(--verde)}
+
+/* PREVISÃO DO TEMPO */
+.tempo-grid{display:flex;gap:8px}
+.tempo-card{flex:1;background:var(--bg);border:1px solid var(--borda);border-radius:14px;padding:12px 6px;text-align:center}
+.tempo-card .dia-t{font-size:.78rem;font-weight:800;text-transform:uppercase;color:var(--verde)}
+.tempo-card .ico{font-size:2rem;line-height:1.2}
+.tempo-card .temp{font-weight:800}
+.tempo-card .min{color:var(--texto-suave);font-weight:600}
+.tempo-card .chuva{font-size:.72rem;color:var(--azul);margin-top:2px}
+.aviso-suave{font-size:.85rem;color:var(--texto-suave)}
+
+/* ÁUDIOS */
+.audio-card{display:flex;align-items:center;gap:14px}
+.audio-card .play{flex:0 0 auto;width:58px;height:58px;border-radius:50%;border:0;background:var(--verde);color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 0 var(--verde-esc);display:flex;align-items:center;justify-content:center}
+.audio-card .play:active{transform:translateY(2px);box-shadow:0 2px 0 var(--verde-esc)}
+.audio-card .meta{flex:1}
+.audio-card .meta h3{margin:0;font-size:1.05rem}
+.audio-card .meta small{color:var(--texto-suave)}
+.audio-aviso{color:#b00020;font-size:.82rem;margin-top:6px}
+html[data-theme="dark"] .audio-aviso{color:#ff8a99}
+
+/* PIX pedinte */
+.pix-box{margin-top:14px;border-top:1px dashed var(--borda);padding-top:14px;text-align:center}
+.pix-apelo{font-weight:700;margin:0 0 8px}
+.pix-chave{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--borda);border-radius:12px;padding:8px 12px;font-weight:800;font-size:1.05rem}
+.pix-rec{font-size:.8rem;color:var(--texto-suave);margin:6px 0 10px}
+.pix-ok{color:var(--verde);font-weight:800;font-size:.9rem;min-height:1.2em}
+
+/* PEGADINHA */
+#pegadinha-box{text-align:center}
+.btn-pegadinha{background:linear-gradient(135deg,var(--amarelo),#ff9b1f);color:#1a1500;border:0;border-radius:16px;padding:18px 22px;font-size:1.1rem;font-weight:800;cursor:pointer;box-shadow:0 6px 0 #c97a00;font-family:inherit;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.btn-pegadinha:active{transform:translateY(2px);box-shadow:0 3px 0 #c97a00}
+.emoji-final{font-size:3.4rem;line-height:1;animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(0) rotate(-30deg);opacity:0}60%{transform:scale(1.3) rotate(10deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+.gag-some{animation:some .5s forwards}
+@keyframes some{to{transform:scale(0) rotate(180deg);opacity:0}}
+.gag-texto{font-weight:800;color:var(--verde);margin-top:6px}
+
+/* ESCALAÇÃO */
+.gramado{background:repeating-linear-gradient(0deg,#0e7a36 0 28px,#0c6e31 28px 56px);border-radius:var(--radius);padding:18px 8px;position:relative;border:2px solid rgba(255,255,255,.25)}
+.gramado::before{content:"";position:absolute;left:8px;right:8px;top:50%;height:2px;background:rgba(255,255,255,.45)}
+.gramado::after{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;border:2px solid rgba(255,255,255,.45);border-radius:50%;transform:translate(-50%,-50%)}
+.linha-time{display:flex;justify-content:space-around;position:relative;z-index:2;margin:10px 0}
+.jogador{text-align:center;width:64px}
+.camisa{width:40px;height:40px;margin:0 auto;border-radius:50%;background:var(--amarelo);color:#1a1500;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;font-size:.95rem}
+.jogador.craque .camisa{background:#fff;color:var(--verde);box-shadow:0 0 0 3px var(--amarelo)}
+.jogador small{display:block;color:#fff;font-size:.68rem;margin-top:3px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+
+/* CHECKLIST "o que levar" */
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.checklist li{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--borda);border-radius:12px;padding:11px 12px;font-weight:600}
+.checklist li .em{font-size:1.3rem;flex:0 0 auto}
+
+/* ACOMODAÇÕES / PAGAMENTOS — listas dinâmicas */
+.lista-din{display:grid;gap:8px}
+.din-card{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--borda);border-radius:12px;padding:11px 12px}
+.din-card .nome{font-weight:800}
+.din-card .val{margin-left:auto;font-weight:800;color:var(--verde)}
+.estado-neutro{color:var(--texto-suave);font-style:italic}
+
+/* UPLOAD */
+.upload-row{display:flex;flex-direction:column;gap:10px}
+.file-input{width:100%}
+.upload-info{font-size:.85rem;color:var(--texto-suave);min-height:1.2em}
+.barra{height:8px;background:var(--borda);border-radius:999px;overflow:hidden;display:none}
+.barra > i{display:block;height:100%;width:0;background:var(--verde);transition:width .25s ease}
+
+/* DICAS */
+.dica{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.dica .ic{font-size:1.3rem;flex:0 0 auto}
+.dica .tx{font-size:.92rem}
+.dica .tx b{color:var(--verde)}
+.rotas{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.rotas .btn{flex:1;min-width:130px;font-size:.95rem;padding:12px 14px}
+
+/* RSVP */
+.rsvp{background:linear-gradient(135deg,var(--verde),var(--azul));color:#fff;border-radius:var(--radius);text-align:center;padding:26px 18px}
+.rsvp h2{color:#fff}
+.rsvp .btn-cta{margin-top:8px}
+.rsvp .btn-wpp{margin-top:10px;width:100%}
+
+/* STICKY */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:linear-gradient(180deg,transparent,rgba(0,0,0,.05));padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;pointer-events:none}
+.sticky-cta .btn{pointer-events:auto;width:100%;max-width:var(--maxw);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+body{padding-bottom:84px}
+
+/* CONFETE */
+#confete{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.confete-peca{position:absolute;top:-20px;font-size:1.2rem;will-change:transform}
+@keyframes cair{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:74vh;border-radius:10px;object-fit:contain}
+.lb-msg{color:#fff;font-size:1.1rem;text-align:center;padding:20px}
+.lb-cap{color:#fff;margin-top:10px;font-weight:700;text-align:center}
+.lb-x{position:absolute;top:12px;right:14px;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:1.6rem;width:46px;height:46px;border-radius:50%;cursor:pointer}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:0;font-size:2rem;width:50px;height:50px;border-radius:50%;cursor:pointer}
+.lb-prev{left:10px} .lb-next{right:10px}
+.lb-nav[hidden]{display:none}
+
+footer{text-align:center;color:var(--texto-suave);font-size:.78rem;padding:10px 16px 24px}
+.compartilhar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.compartilhar .btn{flex:1;min-width:140px;font-size:.92rem;padding:12px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Navegação do convite">
+  <div class="wrap">
+    <a href="#hero">🏟️ Início</a>
+    <a href="#programacao">📋 Programação</a>
+    <a href="#casa">🏠 Casa</a>
+    <a href="#planta">🗺️ Planta</a>
+    <a href="#dicas">🏖️ Dicas</a>
+    <a href="#tempo">🌦️ Tempo</a>
+    <a href="#audios">🎶 Áudios</a>
+    <a href="#escalacao">🧤 Escalação</a>
+    <a href="#levar">🎒 Levar</a>
+    <a href="#quartos">🛏️ Quartos</a>
+    <a href="#transporte">🚗 Transporte</a>
+    <a href="#midias">📸 Mídias</a>
+    <a href="#pagamentos">🧾 Pagamentos</a>
+    <a href="#rsvp">✅ Confirmar</a>
+    <button class="theme-btn" id="themeBtn" aria-label="Alternar modo claro/escuro" title="Modo claro/escuro">🌙</button>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero" id="hero">
+  <img class="bg" src="assets/hero.jpg" alt="Arte de aniversário do Paulo Victor com tema Copa do Mundo do Brasil"
+       width="1000" height="558" onerror="this.style.display='none'" />
+  <div class="overlay"></div>
+  <div class="conteudo">
+    <span class="badge">⚽ Festa de aniversário do PV</span>
+    <h1 class="titulo">A taça será nossa,<br>e o churrasco também! 🌎🍗</h1>
+    <p class="data">📅 10 a 12/07 &nbsp;·&nbsp; <span class="pin">📍 Cabo Frio (Foguete)</span></p>
+    <p class="sub-hero">Estádio de frente pro mar, churrasqueira estalando no aquecimento e cerveja para hidratar. Bora?</p>
+    <a class="btn btn-cta" href="https://forms.gle/aDeycGQSMHgBnGFU7" target="_blank" rel="noopener" onclick="festejar()">⚽ Confirmar minha escalação</a>
+    <a class="btn btn-wpp btn-block" id="grupoTopo" target="_blank" rel="noopener">💬 Entrar no grupo do WhatsApp</a>
+  </div>
+</header>
+
+<!-- ============ 2. CONTAGEM REGRESSIVA ============ -->
+<section class="countdown" id="countdown" aria-label="Contagem regressiva">
+  <div class="wrap">
+    <p class="cd-frase" id="cdFrase">Faltam poucos dias pro pontapé inicial! ⚽</p>
+    <div class="cd-grid" id="cdGrid" aria-live="polite">
+      <div class="cd-item"><div class="cd-num" id="cdD">--</div><div class="cd-lab">dias</div></div>
+      <div class="cd-item"><div class="cd-num" id="cdH">--</div><div class="cd-lab">horas</div></div>
+      <div class="cd-item"><div class="cd-num" id="cdM">--</div><div class="cd-lab">min</div></div>
+      <div class="cd-item"><div class="cd-num" id="cdS">--</div><div class="cd-lab">seg</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. PROGRAMAÇÃO ============ -->
+<section id="programacao">
+  <div class="wrap">
+    <h2 class="sec titulo">📋 Escalação dos dias</h2>
+    <p class="sub">Três dias de jogo. Anota a escalação:</p>
+
+    <div class="card dia">
+      <div class="num"><span class="d">10</span><span class="m">jul</span></div>
+      <div class="info"><span class="badge-dia">Sexta</span>
+        <h3>Chegada da galera e rolê à noite</h3>
+        <p>Chegada da galera e rolê à noite — bar ou pagode 🍺🎶</p></div>
+    </div>
+    <div class="card dia">
+      <div class="num"><span class="d">11</span><span class="m">jul</span></div>
+      <div class="info"><span class="badge-dia">Sábado</span>
+        <h3>Churrasco + Quartas de Final</h3>
+        <p>Churrasco + Quartas de Final da Copa 🍗⚽🔥</p></div>
+    </div>
+    <div class="card dia">
+      <div class="num"><span class="d">12</span><span class="m">jul</span></div>
+      <div class="info"><span class="badge-dia">Domingo</span>
+        <h3>Enterro dos ossos pros zumbis</h3>
+        <p>Enterro dos ossos pros zumbis (despedida/ressaca) 🧟🛌</p></div>
+    </div>
+
+    <p style="text-align:center;font-weight:800;color:var(--verde);margin:6px 0 0" class="titulo">Confirma tua escalação! 📋⚽🛌</p>
+
+    <div class="compartilhar">
+      <button class="btn btn-verde" id="icsBtn">📅 Adicionar ao calendário (.ics)</button>
+      <a class="btn btn-azul" id="gcalBtn" target="_blank" rel="noopener">🗓️ Google Agenda</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. A CASA ============ -->
+<section id="casa">
+  <div class="wrap">
+    <h2 class="sec titulo">🏠 O estádio: a casa</h2>
+    <p class="sub">Casa de praia à beira-mar com vista deslumbrante — Cabo Frio (Foguete)</p>
+    <div class="card">
+      <div class="dados-casa">
+        <span class="chip">👥 Até 15 pessoas</span>
+        <span class="chip">🛏️ 5 quartos</span>
+        <span class="chip">🚿 2 banheiros</span>
+        <span class="chip">⭐ 5,0 (9 avaliações)</span>
+        <span class="chip">🐶 Pet-friendly</span>
+      </div>
+      <p style="margin:0;color:var(--texto-suave)">"Leve toda a família a este ótimo lugar com muito espaço para se divertir. De um lado lagoa e em frente, o mar. Quartos com cama de casal, colchonetes e ventiladores."</p>
+      <ul class="comodidades">
+        <li>Vista para o mar</li><li>Acesso à praia</li><li>Cozinha equipada</li><li>Wi-Fi</li>
+        <li>Estacionamento amplo</li><li>TV (Sky)</li><li>Varanda privativa</li><li>Ventiladores</li>
+      </ul>
+      <p class="disclaimer">ℹ️ Informações do anúncio (confiança média). Toque numa foto para ampliar.</p>
+    </div>
+
+    <!-- GALERIA (fotos locais baixadas; lightbox ao clicar; fallback onerror) -->
+    <div class="galeria" id="galeria"></div>
+
+    <a class="btn btn-azul btn-block" href="https://www.airbnb.com.br/rooms/652013570155622243" target="_blank" rel="noopener">🔗 Ver no Airbnb</a>
+  </div>
+</section>
+
+<!-- ============ 5. PLANTA 2D (SVG) ============ -->
+<section id="planta">
+  <div class="wrap">
+    <h2 class="sec titulo">🗺️ Planta da casa</h2>
+    <p class="sub">Toque num cômodo pra ver o nome e <b>abrir as fotos dele</b>. <em>Planta ilustrativa — disposição aproximada.</em></p>
+    <div class="planta-wrap">
+      <!-- Frente = MAR (topo) · LAGOA à direita · ESTACIONAMENTO embaixo.
+           Cômodos com data-room abrem o lightbox com as fotos daquele espaço (itens nomeados em assets/casa). -->
+      <svg viewBox="0 0 360 430" role="img" aria-label="Planta ilustrativa da casa">
+        <defs>
+          <linearGradient id="gMar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e8bd6"/><stop offset="1" stop-color="#1f4fb0"/></linearGradient>
+          <linearGradient id="gLagoa" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3bbfcf"/><stop offset="1" stop-color="#27a3b8"/></linearGradient>
+          <linearGradient id="gChur" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb38a"/><stop offset="1" stop-color="#ff9b6b"/></linearGradient>
+        </defs>
+
+        <!-- PRAIA DO FOGUETE (frente/mar) -->
+        <rect x="0" y="0" width="360" height="46" fill="url(#gMar)"/>
+        <text x="180" y="29" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">🌊 PRAIA DO FOGUETE (frente)</text>
+
+        <!-- LAGOA (faixa vertical mais à direita) -->
+        <rect x="328" y="52" width="32" height="300" fill="url(#gLagoa)"/>
+        <text x="344" y="202" text-anchor="middle" fill="#06363c" font-size="13" font-weight="800" transform="rotate(-90 344 202)">🏞️ LAGOA</text>
+
+        <!-- 2ª ÁREA DA CHURRASQUEIRA (coluna vertical à direita da casa) -->
+        <g class="cell click" tabindex="0" data-room="churrasqueira" data-nome="🔥 Área da churrasqueira (lateral)">
+          <rect x="290" y="52" width="34" height="300" rx="8" fill="url(#gChur)" stroke="#fff" stroke-width="1.5"/>
+          <text x="307" y="202" text-anchor="middle" fill="#5a2a10" font-size="12" font-weight="800" transform="rotate(-90 307 202)">🔥 Churrasqueira 2</text>
+        </g>
+
+        <!-- ÁREA DA CHURRASQUEIRA (faixa horizontal, logo após a praia) -->
+        <g class="cell click" tabindex="0" data-room="churrasqueira" data-nome="🔥 Área da churrasqueira (frente)">
+          <rect x="8" y="52" width="278" height="40" rx="8" fill="url(#gChur)" stroke="#fff" stroke-width="1.5"/>
+          <text x="147" y="77" text-anchor="middle" fill="#5a2a10" font-size="13">🔥 Área da churrasqueira</text>
+        </g>
+
+        <!-- QUARTO 2 | QUARTO 3 -->
+        <g class="cell click" tabindex="0" data-room="quarto-2" data-nome="🛏️ Quarto 2">
+          <rect x="8" y="96" width="138" height="54" rx="8" fill="#bfe6c8" stroke="#fff" stroke-width="1.5"/>
+          <text x="77" y="127" text-anchor="middle" fill="#13402a" font-size="13">🛏️ Quarto 2</text></g>
+        <g class="cell click" tabindex="0" data-room="quarto-3" data-nome="🛏️ Quarto 3">
+          <rect x="150" y="96" width="136" height="54" rx="8" fill="#bfe6c8" stroke="#fff" stroke-width="1.5"/>
+          <text x="218" y="127" text-anchor="middle" fill="#13402a" font-size="13">🛏️ Quarto 3</text></g>
+
+        <!-- BANHEIRO | corredor | BANHEIRO -->
+        <g class="cell click" tabindex="0" data-room="banheiro-1" data-nome="🚿 Banheiro (esquerda)">
+          <rect x="8" y="154" width="90" height="46" rx="8" fill="#cfe3ff" stroke="#fff" stroke-width="1.5"/>
+          <text x="53" y="181" text-anchor="middle" fill="#13345a" font-size="12">🚿 Banho</text></g>
+        <g class="cell">
+          <rect x="102" y="154" width="90" height="108" rx="8" fill="#eef2ee" stroke="#fff" stroke-width="1.5"/>
+          <text x="147" y="211" text-anchor="middle" fill="#566" font-size="11">corredor</text></g>
+        <g class="cell click" tabindex="0" data-room="banheiro-2" data-nome="🚿 Banheiro (direita)">
+          <rect x="196" y="154" width="90" height="46" rx="8" fill="#cfe3ff" stroke="#fff" stroke-width="1.5"/>
+          <text x="241" y="181" text-anchor="middle" fill="#13345a" font-size="12">🚿 Banho</text></g>
+
+        <!-- QUARTO 1 | (corredor) | QUARTO 4 -->
+        <g class="cell click" tabindex="0" data-room="quarto-1" data-nome="🛏️ Quarto 1">
+          <rect x="8" y="204" width="90" height="58" rx="8" fill="#bfe6c8" stroke="#fff" stroke-width="1.5"/>
+          <text x="53" y="237" text-anchor="middle" fill="#13402a" font-size="13">🛏️ Quarto 1</text></g>
+        <g class="cell click" tabindex="0" data-room="quarto-4" data-nome="🛏️ Quarto 4">
+          <rect x="196" y="204" width="90" height="58" rx="8" fill="#bfe6c8" stroke="#fff" stroke-width="1.5"/>
+          <text x="241" y="237" text-anchor="middle" fill="#13402a" font-size="13">🛏️ Quarto 4</text></g>
+
+        <!-- QUARTO 5 (mezanino, por cima da SALA) | ENTRADA | COZINHA -->
+        <g class="cell click" tabindex="0" data-room="quarto-5" data-nome="🛏️ Quarto 5 (mezanino, em cima da sala)">
+          <rect x="8" y="266" width="90" height="36" rx="8" fill="#bfe6c8" stroke="#fff" stroke-width="1.5" stroke-dasharray="5 3"/>
+          <text x="53" y="282" text-anchor="middle" fill="#13402a" font-size="12">🛏️ Quarto 5 🪜</text>
+          <text x="53" y="295" text-anchor="middle" fill="#3c6b4e" font-size="8">mezanino (sobe pela sala)</text></g>
+        <g class="cell click" tabindex="0" data-room="sala" data-nome="🛋️ Sala de estar / convívio (com mezanino)">
+          <rect x="8" y="306" width="90" height="42" rx="8" fill="#e7d8ff" stroke="#fff" stroke-width="1.5"/>
+          <text x="53" y="332" text-anchor="middle" fill="#3a2a5a" font-size="13">🛋️ Sala</text></g>
+        <g class="cell">
+          <rect x="102" y="266" width="90" height="82" rx="8" fill="#fff3cf" stroke="#fff" stroke-width="1.5"/>
+          <text x="147" y="311" text-anchor="middle" fill="#6a5300" font-size="12">🚪 Entrada</text></g>
+        <g class="cell click" tabindex="0" data-room="cozinha" data-nome="🍳 Cozinha equipada">
+          <rect x="196" y="266" width="90" height="82" rx="8" fill="#ffe0cf" stroke="#fff" stroke-width="1.5"/>
+          <text x="241" y="311" text-anchor="middle" fill="#5a3320" font-size="13">🍳 Cozinha</text></g>
+
+        <!-- Faixa inferior: ESTACIONAMENTO | ENTRADA DA CASA -->
+        <g class="cell">
+          <rect x="0" y="358" width="178" height="50" rx="8" fill="#6b7280" stroke="#fff" stroke-width="1.5"/>
+          <text x="89" y="388" text-anchor="middle" fill="#fff" font-size="13">🚗 Estacionamento</text></g>
+        <g class="cell">
+          <rect x="182" y="358" width="178" height="50" rx="8" fill="#8a93a0" stroke="#fff" stroke-width="1.5"/>
+          <text x="271" y="388" text-anchor="middle" fill="#fff" font-size="13">🚪 Entrada da casa</text></g>
+      </svg>
+      <p class="planta-legenda" id="plantaLegenda" aria-live="polite">Toque num cômodo 👆</p>
+    </div>
+    <p class="disclaimer">ℹ️ Disposição aproximada/ilustrativa baseada no esboço do PV — não é a planta oficial. São <b>5 quartos</b>: o <b>Quarto 5</b> é um mezanino por cima da sala (sobe pela escada da sala).</p>
+  </div>
+</section>
+
+<!-- ============ 5b. DICAS PRA VIAGEM (logo após a planta) ============ -->
+<section id="dicas">
+  <div class="wrap">
+    <h2 class="sec titulo">🏖️ Dicas pra viagem</h2>
+    <p class="sub">Uns toques rápidos pra curtir sem stress:</p>
+    <div class="card">
+      <div class="dica"><span class="ic">🌊</span><span class="tx">
+        <b>Mar na frente + lagoa ao lado:</b> a casa fica entre os dois! Dá pra curtir o
+        <b>mar da Foguete</b> bem na frente e a <b>lagoa</b> logo ao lado. Banho à vontade nos dois. 🏊</span></div>
+      <div class="dica"><span class="ic">🧥</span><span class="tx">
+        <b>Clima de julho (inverno):</b> sol e seco de dia, mas <b>esfria à noite</b>.
+        Leve <b>agasalho</b> + <b>protetor solar</b>.</span></div>
+      <div class="dica"><span class="ic">🛏️</span><span class="tx">
+        <b>Leve roupa de cama e toalha</b> e seus <b>itens de higiene pessoal</b> (lista completa na seção "O que levar").</span></div>
+      <div class="dica"><span class="ic">🛣️</span><span class="tx">
+        <b>Como chegar (saindo de Macaé):</b> ~110 km, cerca de 1h30–2h pela RJ-106 / Rod. Amaral Peixoto.</span></div>
+
+      <div class="rotas">
+        <a class="btn btn-verde" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Macaé,+RJ,+Brasil&destination=-22.931445,-42.038590&travelmode=driving">🗺️ Rota (Google Maps)</a>
+        <a class="btn btn-azul" target="_blank" rel="noopener" href="https://waze.com/ul?ll=-22.931445,-42.038590&navigate=yes">🚗 Rota (Waze)</a>
+        <a class="btn btn-verde" target="_blank" rel="noopener" href="https://maps.app.goo.gl/LAWXR3tEpx1N9BwB8">📍 Ver no mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. PREVISÃO DO TEMPO ============ -->
+<section id="tempo">
+  <div class="wrap">
+    <h2 class="sec titulo">🌦️ Previsão do tempo</h2>
+    <p class="sub">Como deve estar Cabo Frio nos dias da festa:</p>
+    <div class="card">
+      <div class="tempo-grid" id="tempoGrid">
+        <p class="aviso-suave" style="text-align:center;width:100%">Carregando previsão… ⏳</p>
+      </div>
+      <a class="btn btn-azul btn-block" target="_blank" rel="noopener" href="https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/292/cabofrio-rj">📊 Ver 15 dias (Climatempo)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ÁUDIOS ============ -->
+<section id="audios">
+  <div class="wrap">
+    <h2 class="sec titulo">🎶 Áudios da festa</h2>
+    <p class="sub">Sobe o som! (toca só quando você clica)</p>
+
+    <!-- MÚSICA (repetível) + PIX pedinte -->
+    <div class="card">
+      <div class="audio-card">
+        <button class="play" id="btnMusica" aria-label="Tocar a música" aria-pressed="false">▶️</button>
+        <div class="meta">
+          <h3>🎵 Hino da galera</h3>
+          <small>~30s · pode repetir quantas vezes quiser</small>
+          <div class="audio-aviso" id="avisoMusica" hidden>🔇 Áudio indisponível agora.</div>
+        </div>
+        <audio id="audioMusica" src="audio/musica.mp3" preload="none"></audio>
+      </div>
+
+      <!-- PIX "ajuda o pobre PV" -->
+      <div class="pix-box">
+        <p class="pix-apelo">😭😭😭 Ajuda o pobre aniversariante 🥺🙏<br>Uma cervejinha pro churrasco? 💸👉👈</p>
+        <div class="pix-chave">🔑 <span>(22) 99867-1007</span></div>
+        <p class="pix-rec">Pix (celular) · Recebedor: <b>Paulo Victor</b></p>
+        <button class="btn btn-verde" id="pixBtn" style="width:100%">📋 Copiar chave Pix</button>
+        <p class="pix-ok" id="pixOk" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- PEGADINHA -->
+    <div class="card" id="pegadinha-box">
+      <h3 style="margin:0 0 10px">😏 Recado especial do aniversariante</h3>
+      <div id="pegadinha-slot"></div>
+      <audio id="audioPegadinha" src="audio/pegadinha.mp3" preload="none"></audio>
+      <div class="audio-aviso" id="avisoPegadinha" hidden>🔇 Recado indisponível — mas o efeito já valeu 😂</div>
+      <p class="disclaimer" style="margin-top:10px">Spoiler: você só pode ouvir <b>uma vez</b>. 😉</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ESCALAÇÃO ============ -->
+<section id="escalacao">
+  <div class="wrap">
+    <h2 class="sec titulo">🧤 A escalação da galera</h2>
+    <p class="sub">Formação 4-3-3. O camisa 10 já tá confirmado 😎 <em>(nomes a definir)</em></p>
+    <div class="gramado" aria-label="Escalação 4-3-3 ilustrativa">
+      <div class="linha-time">
+        <div class="jogador"><div class="camisa">?</div><small>Atacante</small></div>
+        <div class="jogador craque"><div class="camisa">10</div><small>PV</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Atacante</small></div>
+      </div>
+      <div class="linha-time">
+        <div class="jogador"><div class="camisa">?</div><small>Meia</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Meia</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Meia</small></div>
+      </div>
+      <div class="linha-time">
+        <div class="jogador"><div class="camisa">?</div><small>Lateral</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Zaga</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Zaga</small></div>
+        <div class="jogador"><div class="camisa">?</div><small>Lateral</small></div>
+      </div>
+      <div class="linha-time">
+        <div class="jogador"><div class="camisa">1</div><small>Goleiro</small></div>
+      </div>
+    </div>
+    <p class="disclaimer">Confirme sua presença pra entrar na escalação titular! 👇</p>
+  </div>
+</section>
+
+<!-- ============ 9. O QUE LEVAR ============ -->
+<section id="levar">
+  <div class="wrap">
+    <h2 class="sec titulo">🎒 O que levar na mala</h2>
+    <p class="sub">Pra ninguém ser pego no contra-ataque:</p>
+    <div class="card">
+      <ul class="checklist">
+        <li><span class="em">🛏️</span> Roupa de cama</li>
+        <li><span class="em">🧖</span> Toalha</li>
+        <li><span class="em">👙</span> Roupa de banho</li>
+        <li><span class="em">🧴</span> Materiais de higiene pessoal</li>
+        <li><span class="em">🍺</span> Caneca ou copo para cerveja (se tiver)</li>
+        <li><span class="em">🎲</span> Jogos para fazer à noite</li>
+      </ul>
+      <p class="disclaimer">🧥 É inverno: leva um <b>agasalho</b> pra noite e <b>protetor solar</b> pro dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. ACOMODAÇÕES (lê aba QUARTOS) ============ -->
+<section id="quartos">
+  <div class="wrap">
+    <h2 class="sec titulo">🛏️ Acomodações</h2>
+    <p class="sub">Quem dorme onde (atualiza conforme a galera confirma):</p>
+    <div class="card">
+      <div class="lista-din" id="quartosLista">
+        <p class="aviso-suave">Carregando acomodações… ⏳</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10b. TRANSPORTE / CARONAS (lê aba CARROS) ============ -->
+<section id="transporte">
+  <div class="wrap">
+    <h2 class="sec titulo">🚗 Transporte</h2>
+    <p class="sub">Caronas da galera (atualiza conforme combinam):</p>
+    <div class="card">
+      <div class="lista-din" id="transporteLista">
+        <p class="aviso-suave">Carregando caronas… ⏳</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. MÍDIAS DO EVENTO ============ -->
+<section id="midias">
+  <div class="wrap">
+    <h2 class="sec titulo">📸🎥 Mídias do evento</h2>
+    <p class="sub">Rolou foto ou vídeo bom? Manda pra galera ver depois!</p>
+    <div class="card">
+      <div class="upload-row">
+        <input class="file-input" id="midiaInput" type="file" multiple accept="image/*,video/*" aria-label="Selecionar fotos e vídeos" />
+        <div class="barra" id="midiaBarra"><i></i></div>
+        <div class="upload-info" id="midiaInfo">Nenhum arquivo selecionado.</div>
+        <button class="btn btn-verde" id="midiaUp">⬆️ Upload mídias</button>
+        <a class="btn btn-azul" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/10PTCS-5P_Bwac7Zto-1XOFaOnkkKzVB2">👀 Visualizar mídias</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. COMPROVANTES & PAGAMENTOS ============ -->
+<section id="pagamentos">
+  <div class="wrap">
+    <h2 class="sec titulo">🧾💸 Comprovantes &amp; pagamentos</h2>
+    <p class="sub">Enviou seu Pix? Sobe o comprovante. E confira quanto falta:</p>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px">📤 Enviar comprovante</h3>
+      <div class="upload-row">
+        <input class="file-input" id="compInput" type="file" multiple accept="image/*,application/pdf" aria-label="Selecionar comprovantes" />
+        <div class="barra" id="compBarra"><i></i></div>
+        <div class="upload-info" id="compInfo">Nenhum arquivo selecionado.</div>
+        <button class="btn btn-verde" id="compUp">⬆️ Enviar comprovante</button>
+        <a class="btn btn-azul" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/12wptdq34Tj-Ya-y-qq_p0-zjzXJocFVj">👀 Ver comprovantes</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px">💸 Quem deve quanto</h3>
+      <div class="lista-din" id="pagLista">
+        <p class="aviso-suave">Carregando valores… ⏳</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. RSVP FINAL ============ -->
+<section id="rsvp">
+  <div class="wrap">
+    <div class="rsvp">
+      <h2 class="sec titulo" style="color:#fff">Tá escalado? 📋</h2>
+      <p style="margin:0 0 6px">A taça é nossa, mas o churrasco só sai com a galera confirmada.</p>
+      <a class="btn btn-cta" href="https://forms.gle/aDeycGQSMHgBnGFU7" target="_blank" rel="noopener" onclick="festejar()">⚽ Tô dentro! Confirmar presença</a>
+      <a class="btn btn-wpp" id="grupoRsvp" target="_blank" rel="noopener">💬 Entrar no grupo do WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>Feito com ⚽ e 🍗 pro niver do PV · Cabo Frio (Foguete) · 10–12/07/2026</footer>
+
+<!-- STICKY -->
+<div class="sticky-cta">
+  <a class="btn btn-cta" href="https://forms.gle/aDeycGQSMHgBnGFU7" target="_blank" rel="noopener" onclick="festejar()">📋 Confirmar presença</a>
+</div>
+
+<!-- confete -->
+<div id="confete" aria-hidden="true"></div>
+
+<!-- LIGHTBOX (galeria + fotos por cômodo) -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de fotos">
+  <button class="lb-x" id="lbX" aria-label="Fechar">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <img id="lbImg" alt="" hidden />
+  <div class="lb-msg" id="lbMsg" hidden></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima">›</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+/* =========================================================================
+   CONFIG — tudo centralizado aqui
+   ========================================================================= */
+const CONFIG = {
+  formulario: "https://forms.gle/aDeycGQSMHgBnGFU7",
+  // Apps Script Web App (uploads). Vazio => botões só abrem a pasta do Drive.
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzBWRXrhJD6xsd_Vuk_ZJKVtzRCTK0dyqoRSKq4wlcEcKWnjOUr3r3X6Ckzb0ZUls7sLw/exec",
+  driveMidias: "https://drive.google.com/drive/folders/10PTCS-5P_Bwac7Zto-1XOFaOnkkKzVB2",
+  driveComprovantes: "https://drive.google.com/drive/folders/12wptdq34Tj-Ya-y-qq_p0-zjzXJocFVj",
+  planilhaId: "1n3xxacyZB0yhXL0QCNVdI82v3nnwy7Jn6BrxxMaaJK4",
+  grupoWhatsapp: "https://chat.whatsapp.com/I91bD4LAY3KAXgOfUZ0oDH",
+  coords: "-22.931445,-42.038590",
+  pixExibe: "(22) 99867-1007",
+  pixCopia: "+5522998671007",
+  pixRecebedor: "Paulo Victor",
+  // calendário (all-day 10–12/07; DTEND exclusivo = 13)
+  iniISO: "20260710", fimISO: "20260713",
+  alvo: new Date(2026, 6, 10, 0, 0, 0)
+};
+const reduzMov = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = id => document.getElementById(id);
+
+// links do grupo do WhatsApp
+$('grupoTopo').href = CONFIG.grupoWhatsapp;
+$('grupoRsvp').href = CONFIG.grupoWhatsapp;
+
+/* =========================================================================
+   2. CONTAGEM REGRESSIVA
+   ========================================================================= */
+(function countdown(){
+  const d=$('cdD'),h=$('cdH'),m=$('cdM'),s=$('cdS'),f=$('cdFrase');
+  function tick(){
+    let diff = CONFIG.alvo - new Date();
+    if (diff <= 0){ f.textContent="É hoje/agora! Bola rolando! ⚽🔥"; d.textContent=h.textContent=m.textContent=s.textContent="0"; return; }
+    const dias=Math.floor(diff/86400000); diff-=dias*86400000;
+    const hrs=Math.floor(diff/3600000);   diff-=hrs*3600000;
+    const min=Math.floor(diff/60000);     diff-=min*60000;
+    const seg=Math.floor(diff/1000);
+    d.textContent=dias; h.textContent=String(hrs).padStart(2,'0');
+    m.textContent=String(min).padStart(2,'0'); s.textContent=String(seg).padStart(2,'0');
+    f.textContent=`Faltam ${dias} ${dias===1?'dia':'dias'} pro pontapé inicial! ⚽`;
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* =========================================================================
+   LIGHTBOX (usado pela galeria e pela planta)
+   ========================================================================= */
+const Lightbox = (function(){
+  const lb=$('lightbox'), img=$('lbImg'), msg=$('lbMsg'), cap=$('lbCap'),
+        prev=$('lbPrev'), next=$('lbNext'), x=$('lbX');
+  let fotos=[], idx=0, ultimoFoco=null;
+  function render(){
+    if (!fotos.length){ img.hidden=true; prev.hidden=true; next.hidden=true; msg.hidden=false;
+      msg.textContent="📷 Fotos em breve"; return; }
+    msg.hidden=true; img.hidden=false;
+    img.src=fotos[idx]; img.alt=cap.dataset.base ? (cap.dataset.base+' '+(idx+1)) : 'Foto';
+    const muitas=fotos.length>1; prev.hidden=!muitas; next.hidden=!muitas;
+    cap.textContent=(cap.dataset.base||'') + (muitas? ` (${idx+1}/${fotos.length})` : '');
+  }
+  function abrir(lista, titulo){
+    fotos=lista||[]; idx=0; cap.dataset.base=titulo||''; ultimoFoco=document.activeElement;
+    render(); lb.classList.add('open'); x.focus();
+  }
+  function fechar(){ lb.classList.remove('open'); img.src=''; if(ultimoFoco)ultimoFoco.focus(); }
+  function ir(n){ if(!fotos.length)return; idx=(idx+n+fotos.length)%fotos.length; render(); }
+  x.addEventListener('click',fechar);
+  prev.addEventListener('click',()=>ir(-1));
+  next.addEventListener('click',()=>ir(1));
+  lb.addEventListener('click',e=>{ if(e.target===lb) fechar(); });           // clique fora fecha
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')fechar();
+    else if(e.key==='ArrowLeft')ir(-1);
+    else if(e.key==='ArrowRight')ir(1);
+  });
+  return { abrir };
+})();
+
+// Sonda fotos sequenciais (prefix-1.jpg, prefix-2.jpg, ...) parando no 1º que faltar.
+function carregaFoto(url){
+  return new Promise(res=>{ const im=new Image(); im.onload=()=>res(true); im.onerror=()=>res(false); im.src=url; });
+}
+async function sondaFotos(prefix, max=15){
+  const achadas=[];
+  for(let i=1;i<=max;i++){
+    const url=`assets/casa/${prefix}-${i}.jpg`;
+    if(await carregaFoto(url)) achadas.push(url); else break;
+  }
+  return achadas;
+}
+
+/* =========================================================================
+   4. GALERIA — usa as fotos LOCAIS (casa-01.jpg ...), lazy-load + lightbox
+   ========================================================================= */
+(async function galeria(){
+  const wrap=$('galeria');
+  const urls=[];
+  // sonda casa-01 ... casa-15 (já existem 5; o PV pode adicionar mais)
+  for(let i=1;i<=15;i++){
+    const n=String(i).padStart(2,'0');
+    const url=`assets/casa/casa-${n}.jpg`;
+    if(await carregaFoto(url)) urls.push(url); else if(i>=6) break; // tolera buracos só nas 5 primeiras
+  }
+  if(!urls.length){ // fallback total: 1 card placeholder
+    const ph=document.createElement('div'); ph.className='foto ph'; wrap.appendChild(ph); return;
+  }
+  urls.forEach((url,i)=>{
+    const b=document.createElement('button'); b.className='foto'; b.type='button';
+    b.setAttribute('aria-label','Ampliar foto '+(i+1));
+    const img=document.createElement('img');
+    img.loading='lazy'; img.decoding='async'; img.width=400; img.height=300;
+    img.alt='Foto da casa de praia em Cabo Frio ('+(i+1)+')'; img.src=url;
+    img.onerror=()=>{ b.classList.add('ph'); img.remove(); };
+    b.appendChild(img);
+    b.addEventListener('click',()=>Lightbox.abrir(urls,'Foto da casa'));
+    wrap.appendChild(b);
+  });
+})();
+
+/* =========================================================================
+   5. PLANTA — highlight + legenda + abrir fotos do cômodo (lightbox)
+   ========================================================================= */
+(function planta(){
+  const legenda=$('plantaLegenda');
+  const cells=document.querySelectorAll('.cell.click');
+  async function ativa(el){
+    cells.forEach(c=>c.classList.remove('active')); el.classList.add('active');
+    const nome=el.getAttribute('data-nome'); legenda.textContent=nome;
+    const room=el.getAttribute('data-room');
+    if(!room) return;
+    legenda.textContent=nome+' — abrindo fotos…';
+    const fotos=await sondaFotos(room);
+    legenda.textContent=nome + (fotos.length? ` (${fotos.length} foto${fotos.length>1?'s':''})` : ' — 📷 fotos em breve');
+    Lightbox.abrir(fotos, nome.replace(/^[^\wÀ-ú]+/,''));
+  }
+  cells.forEach(el=>{
+    el.addEventListener('click',()=>ativa(el));
+    el.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();ativa(el);} });
+  });
+})();
+
+/* =========================================================================
+   6. PREVISÃO DO TEMPO (Open-Meteo) — nunca quebra a página
+   ========================================================================= */
+(function tempo(){
+  const grid=$('tempoGrid');
+  const WMO={0:['☀️','Céu limpo'],1:['🌤️','Poucas nuvens'],2:['⛅','Parcial'],3:['☁️','Nublado'],
+    45:['🌫️','Névoa'],48:['🌫️','Névoa'],51:['🌦️','Garoa'],53:['🌦️','Garoa'],55:['🌧️','Garoa'],
+    61:['🌧️','Chuva'],63:['🌧️','Chuva'],65:['🌧️','Chuva forte'],71:['🌨️','Neve'],
+    80:['🌦️','Pancadas'],81:['🌦️','Pancadas'],82:['⛈️','Pancadas fortes'],95:['⛈️','Tempestade']};
+  const url="https://api.open-meteo.com/v1/forecast?latitude=-22.9314&longitude=-42.0386&timezone=America/Sao_Paulo&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&start_date=2026-07-10&end_date=2026-07-12";
+  function falhou(){
+    grid.innerHTML='<p class="aviso-suave" style="text-align:center;width:100%">Não consegui carregar a previsão agora 😅 — confira no Climatempo abaixo.</p>';
+  }
+  fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+    const dl=d&&d.daily;
+    if(!dl||!dl.time||!dl.time.length){ falhou(); return; }
+    const dias=['dom','seg','ter','qua','qui','sex','sáb'];
+    grid.innerHTML='';
+    dl.time.forEach((iso,i)=>{
+      const [Y,M,D]=iso.split('-').map(Number);
+      const dt=new Date(Y,M-1,D);
+      const wc=dl.weather_code[i]; const w=WMO[wc]||['🌡️','—'];
+      const card=document.createElement('div'); card.className='tempo-card';
+      card.innerHTML=
+        `<div class="dia-t">${dias[dt.getDay()]} ${String(D).padStart(2,'0')}/${String(M).padStart(2,'0')}</div>`+
+        `<div class="ico" title="${w[1]}">${w[0]}</div>`+
+        `<div class="temp">${Math.round(dl.temperature_2m_max[i])}°</div>`+
+        `<div class="min">${Math.round(dl.temperature_2m_min[i])}°</div>`+
+        `<div class="chuva">🌧️ ${dl.precipitation_probability_max[i]??0}%</div>`;
+      grid.appendChild(card);
+    });
+  }).catch(falhou);
+})();
+
+/* =========================================================================
+   7a. MÚSICA — play/pause, repetível, tolerante a arquivo ausente
+   ========================================================================= */
+(function musica(){
+  const audio=$('audioMusica'), btn=$('btnMusica'), aviso=$('avisoMusica');
+  audio.addEventListener('loadedmetadata',()=>{
+    // loga a duração (item 10) e avisa se fugir muito de ~30s
+    const dur=audio.duration;
+    console.log('[musica.mp3] duração =', dur.toFixed(1)+'s');
+    if(isFinite(dur) && (dur<15 || dur>60)) console.warn('[musica.mp3] fora de ~30s ('+dur.toFixed(1)+'s)');
+  });
+  audio.addEventListener('error',()=>{ aviso.hidden=false; btn.disabled=true; btn.style.opacity=.5; btn.textContent='🔇'; });
+  btn.addEventListener('click',()=>{
+    if(audio.paused){ audio.play().then(()=>{btn.textContent='⏸️';btn.setAttribute('aria-pressed','true');})
+        .catch(()=>{aviso.hidden=false;}); }
+    else { audio.pause(); btn.textContent='▶️'; btn.setAttribute('aria-pressed','false'); }
+  });
+  audio.addEventListener('ended',()=>{ btn.textContent='▶️'; btn.setAttribute('aria-pressed','false'); });
+})();
+
+/* 7b. PIX — copiar chave (offline, com fallback) */
+(function pix(){
+  const btn=$('pixBtn'), ok=$('pixOk');
+  btn.addEventListener('click',async()=>{
+    const txt=CONFIG.pixCopia;
+    let copiou=false;
+    try{ if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(txt); copiou=true; } }catch(e){}
+    if(!copiou){ // fallback execCommand
+      try{ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.focus(); ta.select(); copiou=document.execCommand('copy'); ta.remove(); }catch(e){}
+    }
+    ok.textContent = copiou ? 'copiado! 🙏 ('+txt+')' : 'copie manualmente: '+txt;
+    confete();
+  });
+})();
+
+/* =========================================================================
+   7c. PEGADINHA — toca 1x, vira 😂 e PERSISTE (localStorage). Nunca mais toca.
+   ========================================================================= */
+(function pegadinha(){
+  const CHAVE='pv_niver_pegadinha_feita';
+  const slot=$('pegadinha-slot'), audio=$('audioPegadinha'), aviso=$('avisoPegadinha');
+  const jaFez=()=>{ try{return localStorage.getItem(CHAVE)==='1';}catch(e){return false;} };
+  const marca=()=>{ try{localStorage.setItem(CHAVE,'1');}catch(e){} };
+  function renderFinal(comTexto){
+    slot.innerHTML='<div class="emoji-final" role="img" aria-label="Risada">😂</div>'+(comTexto?'<div class="gag-texto">kkkk caiu 😂</div>':'');
+  }
+  if(jaFez()){ renderFinal(false); return; }       // já consumido (mesmo após recarregar): só o 😂
+
+  const btn=document.createElement('button');
+  btn.className='btn-pegadinha'; btn.type='button'; btn.textContent='🔊 Recado especial — toca aí!';
+  slot.appendChild(btn);
+  let usado=false;
+  function vira(){ if(reduzMov){renderFinal(true);} else { btn.classList.add('gag-some'); setTimeout(()=>{renderFinal(true);confete();},480);} }
+  btn.addEventListener('click',()=>{
+    if(usado)return; usado=true;
+    marca();                       // PERSISTE JÁ NO CLIQUE => nunca mais, mesmo recarregando
+    btn.disabled=true;
+    let virou=false; const fazVirar=()=>{ if(!virou){virou=true;vira();} };
+    audio.addEventListener('ended',fazVirar,{once:true});
+    audio.addEventListener('error',()=>{aviso.hidden=false;fazVirar();},{once:true});
+    const p=audio.play(); if(p&&p.catch){ p.catch(()=>{aviso.hidden=false;fazVirar();}); }
+    setTimeout(fazVirar,15000);    // rede de segurança
+  });
+})();
+
+/* =========================================================================
+   CONFETE
+   ========================================================================= */
+function confete(){
+  if(reduzMov)return;
+  const camada=$('confete'); const emojis=['⚽','🏆','🟢','🟡','🎉','🍗'];
+  for(let i=0;i<26;i++){
+    const p=document.createElement('span'); p.className='confete-peca'; p.textContent=emojis[i%emojis.length];
+    p.style.left=Math.random()*100+'vw'; p.style.fontSize=(12+Math.random()*16)+'px';
+    const dur=2.2+Math.random()*1.6; p.style.animation=`cair ${dur}s linear forwards`; p.style.animationDelay=(Math.random()*0.3)+'s';
+    camada.appendChild(p); setTimeout(()=>p.remove(),(dur+0.6)*1000);
+  }
+}
+function festejar(){ confete(); }
+
+/* =========================================================================
+   CALENDÁRIO (.ics + Google Agenda)
+   ========================================================================= */
+(function calendario(){
+  const params=new URLSearchParams({ action:'TEMPLATE', text:'Niver do PV estilo Copa 🌎🍗',
+    dates:CONFIG.iniISO+'/'+CONFIG.fimISO, location:'Praia do Foguete, Cabo Frio - RJ',
+    details:'A taça será nossa, e o churrasco também! Confirma: '+CONFIG.formulario });
+  $('gcalBtn').href='https://www.google.com/calendar/render?'+params.toString();
+  $('icsBtn').addEventListener('click',()=>{
+    const ics=`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Niver PV//Copa//PT-BR
+BEGIN:VEVENT
+UID:niver-pv-2026@cabofrio
+DTSTART;VALUE=DATE:${CONFIG.iniISO}
+DTEND;VALUE=DATE:${CONFIG.fimISO}
+SUMMARY:Niver do PV estilo Copa
+DESCRIPTION:A taça será nossa\\, e o churrasco também! Confirma: ${CONFIG.formulario}
+LOCATION:Praia do Foguete\\, Cabo Frio - RJ
+END:VEVENT
+END:VCALENDAR`;
+    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+    a.download='niver-pv-copa.ics'; document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+
+/* =========================================================================
+   MODO ESCURO
+   ========================================================================= */
+(function tema(){
+  const btn=$('themeBtn'); const KEY='pv_niver_tema';
+  function aplica(t){ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);} btn.textContent=(t==='dark')?'☀️':'🌙'; }
+  let atual; try{atual=localStorage.getItem(KEY);}catch(e){}
+  if(atual)aplica(atual); else btn.textContent=window.matchMedia('(prefers-color-scheme: dark)').matches?'☀️':'🌙';
+  btn.addEventListener('click',()=>{
+    const ehEscuro=document.documentElement.getAttribute('data-theme')==='dark'
+      || (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const novo=ehEscuro?'light':'dark'; aplica(novo); try{localStorage.setItem(KEY,novo);}catch(e){}
+  });
+})();
+
+/* =========================================================================
+   UPLOAD (Mídias / Comprovantes) -> Apps Script (ou abre a pasta se sem URL)
+   ========================================================================= */
+function lerBase64(file){
+  return new Promise((res,rej)=>{ const r=new FileReader();
+    r.onload=()=>res(String(r.result).split(',')[1]||''); r.onerror=rej; r.readAsDataURL(file); });
+}
+function setupUpload({input, btn, info, barra, tipo, pasta}){
+  const fill=barra.querySelector('i');
+  input.addEventListener('change',()=>{
+    const n=input.files.length;
+    info.textContent = n? `${n} arquivo${n>1?'s':''} selecionado${n>1?'s':''}.` : 'Nenhum arquivo selecionado.';
+  });
+  btn.addEventListener('click',async()=>{
+    const files=[...input.files];
+    if(!files.length){ info.textContent='Selecione ao menos 1 arquivo. 👆'; return; }
+    // Sem endpoint configurado: apenas abre a pasta do Drive (não finge envio)
+    if(!CONFIG.APPS_SCRIPT_URL){
+      info.textContent='Envio automático não configurado — abrindo a pasta do Drive pra você subir manualmente.';
+      window.open(pasta,'_blank'); return;
+    }
+    btn.disabled=true; barra.style.display='block'; fill.style.width='0';
+    try{
+      const arquivos=[];
+      for(let i=0;i<files.length;i++){
+        info.textContent=`Lendo ${i+1}/${files.length}…`;
+        arquivos.push({ nome:files[i].name, mime:files[i].type||'application/octet-stream', base64:await lerBase64(files[i]) });
+        fill.style.width=Math.round(((i+1)/files.length)*50)+'%';
+      }
+      info.textContent='Enviando…';
+      // text/plain evita preflight CORS; resposta do Apps Script costuma ser opaca -> sucesso otimista
+      await fetch(CONFIG.APPS_SCRIPT_URL,{ method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify({tipo, arquivos}) });
+      fill.style.width='100%';
+      info.innerHTML='✅ Enviado! Confira na pasta do Drive. (se não aparecer, tente de novo)';
+      input.value='';
+      confete();
+    }catch(e){
+      info.innerHTML='⚠️ Não consegui enviar agora. <a href="'+pasta+'" target="_blank" rel="noopener">Abrir a pasta</a> e subir manualmente.';
+    }finally{ btn.disabled=false; setTimeout(()=>{barra.style.display='none';},1200); }
+  });
+}
+setupUpload({ input:$('midiaInput'), btn:$('midiaUp'), info:$('midiaInfo'), barra:$('midiaBarra'),
+  tipo:'midia', pasta:CONFIG.driveMidias });
+setupUpload({ input:$('compInput'), btn:$('compUp'), info:$('compInfo'), barra:$('compBarra'),
+  tipo:'comprovante', pasta:CONFIG.driveComprovantes });
+
+/* =========================================================================
+   LEITURA DA PLANILHA (gviz) — RESUMO (pagamentos) e QUARTOS (acomodações)
+   ========================================================================= */
+function gvizUrl(sheet){
+  return `https://docs.google.com/spreadsheets/d/${CONFIG.planilhaId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheet)}`;
+}
+async function lerGviz(sheet){
+  const r=await fetch(gvizUrl(sheet));
+  const txt=await r.text();
+  const ini=txt.indexOf('('), fim=txt.lastIndexOf(')');
+  if(ini<0||fim<0) throw new Error('formato gviz inesperado');
+  const json=JSON.parse(txt.slice(ini+1,fim));
+  return (json.table&&json.table.rows)||[];
+}
+function cel(row,i){ const c=row.c&&row.c[i]; return c? (c.v) : null; }
+function linkPlanilha(){ return `https://docs.google.com/spreadsheets/d/${CONFIG.planilhaId}/edit`; }
+
+// 12B) PAGAMENTOS (aba RESUMO: A=Nome, B=Total a pagar)
+(async function pagamentos(){
+  const box=$('pagLista');
+  try{
+    const rows=await lerGviz('RESUMO');
+    const itens=[];
+    rows.forEach(r=>{
+      const nome=cel(r,0); let total=cel(r,1);
+      if(nome==null||String(nome).trim()==='') return;
+      if(typeof total==='string') total=parseFloat(total.replace(/[^\d,.-]/g,'').replace(',','.'));
+      if(!(total>0)) return;                         // só quem tem valor > 0
+      itens.push({nome:String(nome).trim(), total});
+    });
+    if(!itens.length){ box.innerHTML='<p class="estado-neutro">💸 Pagamentos ainda não definidos ⏳</p>'; return; }
+    box.innerHTML='';
+    itens.forEach(it=>{
+      const v=it.total.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+      const d=document.createElement('div'); d.className='din-card';
+      d.innerHTML=`<span>💸</span><span class="nome">${it.nome}</span>`+
+        `<span class="val">R$ ${v}</span>`;
+      d.title=`Faça um Pix de R$ ${v} para ${CONFIG.pixExibe}`;
+      box.appendChild(d);
+    });
+    const dica=document.createElement('p'); dica.className='disclaimer';
+    dica.innerHTML=`Pix de cada valor para <b>${CONFIG.pixExibe}</b> (Paulo Victor).`;
+    box.appendChild(dica);
+  }catch(e){
+    box.innerHTML='<p class="estado-neutro">💸 Pagamentos ainda não definidos ⏳</p>';
+  }
+})();
+
+// 14) ACOMODAÇÕES (aba QUARTOS: A=Nome, B=Acomodação)
+(async function acomodacoes(){
+  const box=$('quartosLista');
+  try{
+    const rows=await lerGviz('QUARTOS');
+    const itens=[];
+    rows.forEach((r,idx)=>{
+      const nome=cel(r,0), quarto=cel(r,1);
+      if(idx===0 && String(nome).toUpperCase().includes('PESSOA')) return;  // pula cabeçalho se vier como linha
+      if(nome==null||String(nome).trim()==='') return;
+      if(quarto==null||String(quarto).trim()==='') return;                  // só quem já tem quarto
+      itens.push({nome:String(nome).trim(), quarto:String(quarto).trim()});
+    });
+    if(!itens.length){ box.innerHTML='<p class="estado-neutro">🛏️ Acomodações ainda não definidas ⏳</p>'; return; }
+    box.innerHTML='';
+    itens.forEach(it=>{
+      const d=document.createElement('div'); d.className='din-card';
+      d.innerHTML=`<span>🛏️</span><span class="nome">${it.nome}</span><span class="val">${it.quarto}</span>`;
+      box.appendChild(d);
+    });
+  }catch(e){
+    box.innerHTML='<p class="estado-neutro">🛏️ Acomodações ainda não definidas ⏳</p>';
+  }
+})();
+
+// 10b) TRANSPORTE (aba CARROS: A=Condutor, B..F=Passageiro 1..5, G=Data saída, H=Horário)
+(async function transporte(){
+  const box=$('transporteLista');
+  try{
+    const rows=await lerGviz('CARROS');
+    const itens=[];
+    rows.forEach((r,idx)=>{
+      const condutor=cel(r,0);
+      if(idx===0 && String(condutor).toUpperCase().includes('CONDUTOR')) return; // pula cabeçalho se vier como linha
+      if(condutor==null||String(condutor).trim()==='') return;                   // só linhas com condutor
+      const passageiros=[];
+      for(let c=1;c<=5;c++){ const p=cel(r,c); if(p!=null&&String(p).trim()!=='') passageiros.push(String(p).trim()); }
+      const data=cel(r,6), hora=cel(r,7);
+      itens.push({
+        condutor:String(condutor).trim(),
+        passageiros,
+        data:(data!=null?String(data).trim():''),
+        hora:(hora!=null?String(hora).trim():'')
+      });
+    });
+    if(!itens.length){ box.innerHTML='<p class="estado-neutro">🚗 Transporte ainda não definido ⏳</p>'; return; }
+    box.innerHTML='';
+    itens.forEach(it=>{
+      const d=document.createElement('div'); d.className='din-card';
+      d.style.flexDirection='column'; d.style.alignItems='flex-start'; d.style.gap='4px';
+      // monta a linha de saída omitindo pedaços vazios com elegância
+      const saida=[ it.data?('📅 Saída: '+it.data):'', it.hora?('🕐 '+it.hora):'' ].filter(Boolean).join('  ·  ');
+      d.innerHTML=
+        `<div><b>🚗 Condutor:</b> ${it.condutor}</div>`+
+        `<div>👥 Passageiros: ${it.passageiros.length? it.passageiros.join(', ') : '—'}</div>`+
+        (saida? `<div>${saida}</div>` : '');
+      box.appendChild(d);
+    });
+  }catch(e){
+    box.innerHTML='<p class="estado-neutro">🚗 Transporte ainda não definido ⏳</p>';
+  }
+})();
+</script>
+</body>
+</html>
