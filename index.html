@@ -13,9 +13,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="A taça será nossa, e o churrasco também! 🌎🍗" />
 <meta property="og:description" content="Niver do PV estilo Copa em Cabo Frio (Foguete), 10–12/07. Confirma tua escalação! ⚽" />
-<meta property="og:image" content="assets/hero.jpg" />
+<meta property="og:image" content="https://pvalves10-jpg.github.io/niver-pv/assets/hero.jpg" />
+<meta property="og:url" content="https://pvalves10-jpg.github.io/niver-pv/" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://pvalves10-jpg.github.io/niver-pv/assets/hero.jpg" />
 
 <style>
 /* =========================================================
@@ -192,6 +194,15 @@ html[data-theme="dark"] .audio-aviso{color:#ff8a99}
 .din-card .nome{font-weight:800}
 .din-card .val{margin-left:auto;font-weight:800;color:var(--verde)}
 .estado-neutro{color:var(--texto-suave);font-style:italic}
+/* TRANSPORTE — um card por carro */
+.carro-card{background:var(--bg);border:1px solid var(--borda);border-left:5px solid var(--verde);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:5px}
+.carro-titulo{font-family:"Arial Narrow","Oswald",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.5px;font-weight:800;font-size:1.05rem;color:var(--verde)}
+.carro-linha{font-size:.92rem}
+.carro-saida{color:var(--texto-suave);font-weight:700}
+/* PAGAMENTOS — quem já pagou */
+.pago-card{border-color:var(--verde);background:linear-gradient(90deg,rgba(10,143,60,.14),transparent)}
+.pago-card .nome{color:var(--verde)}
+.pago-card .val{color:var(--verde)}
 
 /* UPLOAD */
 .upload-row{display:flex;flex-direction:column;gap:10px}
@@ -1035,6 +1046,11 @@ async function lerGviz(sheet){
 }
 function cel(row,i){ const c=row.c&&row.c[i]; return c? (c.v) : null; }
 function linkPlanilha(){ return `https://docs.google.com/spreadsheets/d/${CONFIG.planilhaId}/edit`; }
+// gviz manda datas/horas como string "Date(ano,mes,dia[,h,min,s])" (mês começa em 0)
+function fmtDataGviz(v){ const m=String(v).match(/^Date\((\d+),(\d+),(\d+)/);
+  if(!m) return v?String(v).trim():''; return String(+m[3]).padStart(2,'0')+'/'+String(+m[2]+1).padStart(2,'0'); }
+function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)/);
+  if(!m) return v?String(v).trim():''; return String(+m[1]).padStart(2,'0')+':'+String(+m[2]).padStart(2,'0'); }
 
 // 12B) PAGAMENTOS (aba RESUMO: A=Nome, B=Total a pagar)
 (async function pagamentos(){
@@ -1043,25 +1059,35 @@ function linkPlanilha(){ return `https://docs.google.com/spreadsheets/d/${CONFIG
     const rows=await lerGviz('RESUMO');
     const itens=[];
     rows.forEach(r=>{
-      const nome=cel(r,0); let total=cel(r,1);
+      const nome=cel(r,0); let total=cel(r,1); const situacao=cel(r,2);  // C = Situação
       if(nome==null||String(nome).trim()==='') return;
       if(typeof total==='string') total=parseFloat(total.replace(/[^\d,.-]/g,'').replace(',','.'));
       if(!(total>0)) return;                         // só quem tem valor > 0
-      itens.push({nome:String(nome).trim(), total});
+      const pago=String(situacao||'').trim().toUpperCase()==='PAGO';
+      itens.push({nome:String(nome).trim(), total, pago});
     });
     if(!itens.length){ box.innerHTML='<p class="estado-neutro">💸 Pagamentos ainda não definidos ⏳</p>'; return; }
     box.innerHTML='';
+    let temAPagar=false;
     itens.forEach(it=>{
-      const v=it.total.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-      const d=document.createElement('div'); d.className='din-card';
-      d.innerHTML=`<span>💸</span><span class="nome">${it.nome}</span>`+
-        `<span class="val">R$ ${v}</span>`;
-      d.title=`Faça um Pix de R$ ${v} para ${CONFIG.pixExibe}`;
-      box.appendChild(d);
+      if(it.pago){
+        const d=document.createElement('div'); d.className='din-card pago-card';
+        d.innerHTML=`<span>✅</span><span class="nome">${it.nome}</span><span class="val">pago! 🎉</span>`;
+        box.appendChild(d);
+      } else {
+        temAPagar=true;
+        const v=it.total.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+        const d=document.createElement('div'); d.className='din-card';
+        d.innerHTML=`<span>💸</span><span class="nome">${it.nome}</span><span class="val">R$ ${v}</span>`;
+        d.title=`Faça um Pix de R$ ${v} para ${CONFIG.pixExibe}`;
+        box.appendChild(d);
+      }
     });
-    const dica=document.createElement('p'); dica.className='disclaimer';
-    dica.innerHTML=`Pix de cada valor para <b>${CONFIG.pixExibe}</b> (Paulo Victor).`;
-    box.appendChild(dica);
+    if(temAPagar){
+      const dica=document.createElement('p'); dica.className='disclaimer';
+      dica.innerHTML=`Pix de cada valor para <b>${CONFIG.pixExibe}</b> (Paulo Victor).`;
+      box.appendChild(dica);
+    }
   }catch(e){
     box.innerHTML='<p class="estado-neutro">💸 Pagamentos ainda não definidos ⏳</p>';
   }
@@ -1104,25 +1130,23 @@ function linkPlanilha(){ return `https://docs.google.com/spreadsheets/d/${CONFIG
       if(condutor==null||String(condutor).trim()==='') return;                   // só linhas com condutor
       const passageiros=[];
       for(let c=1;c<=5;c++){ const p=cel(r,c); if(p!=null&&String(p).trim()!=='') passageiros.push(String(p).trim()); }
-      const data=cel(r,6), hora=cel(r,7);
       itens.push({
         condutor:String(condutor).trim(),
         passageiros,
-        data:(data!=null?String(data).trim():''),
-        hora:(hora!=null?String(hora).trim():'')
+        data:fmtDataGviz(cel(r,6)),   // "Date(2026,6,10)" -> "10/07"
+        hora:fmtHoraGviz(cel(r,7))    // "Date(1899,11,30,10,30,0)" -> "10:30"
       });
     });
     if(!itens.length){ box.innerHTML='<p class="estado-neutro">🚗 Transporte ainda não definido ⏳</p>'; return; }
     box.innerHTML='';
     itens.forEach(it=>{
-      const d=document.createElement('div'); d.className='din-card';
-      d.style.flexDirection='column'; d.style.alignItems='flex-start'; d.style.gap='4px';
-      // monta a linha de saída omitindo pedaços vazios com elegância
-      const saida=[ it.data?('📅 Saída: '+it.data):'', it.hora?('🕐 '+it.hora):'' ].filter(Boolean).join('  ·  ');
+      const d=document.createElement('div'); d.className='carro-card';
+      // linha de saída: omite o pedaço vazio com elegância
+      const saida=[ it.data?('📅 '+it.data):'', it.hora?('🕐 '+it.hora):'' ].filter(Boolean).join('  ·  ');
       d.innerHTML=
-        `<div><b>🚗 Condutor:</b> ${it.condutor}</div>`+
-        `<div>👥 Passageiros: ${it.passageiros.length? it.passageiros.join(', ') : '—'}</div>`+
-        (saida? `<div>${saida}</div>` : '');
+        `<div class="carro-titulo">🚗 Carro do ${it.condutor.toUpperCase()}</div>`+
+        `<div class="carro-linha">👥 <b>Passageiros:</b> ${it.passageiros.length? it.passageiros.join(', ') : '—'}</div>`+
+        (saida? `<div class="carro-linha carro-saida">${saida}</div>` : '');
       box.appendChild(d);
     });
   }catch(e){
