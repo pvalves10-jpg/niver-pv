@@ -1,0 +1,47 @@
+========================================================
+COMO NOMEAR AS FOTOS DA CASA  (guia pro Paulo)
+========================================================
+
+>>> JÁ BAIXEI TODAS AS FOTOS DO ANÚNCIO <<<
+Estão aqui como:  foto-01.jpg, foto-02.jpg ... foto-40.jpg  (40 fotos, alta resolução).
+Essas são as fotos "cruas" pra você OLHAR e RENOMEAR. (Cerca de 5 podem repetir as
+casa-01..05 que já existiam, e 1 ou 2 podem não ser da casa — se achar, é só apagar.)
+
+O site usa as fotos em 2 lugares:
+
+------------------------------------------------------------------
+1) GALERIA da seção "🏠 O estádio: a casa"  ->  arquivos casa-NN.jpg
+------------------------------------------------------------------
+- Hoje mostra casa-01.jpg ... casa-05.jpg. O site procura até casa-15.jpg.
+- Para colocar MAIS fotos boas na galeria (fachada, vista, área externa), renomeie as
+  melhores foto-XX.jpg para  casa-06.jpg, casa-07.jpg ...  (sem pular número).
+
+------------------------------------------------------------------
+2) PLANTA CLICÁVEL -> fotos do cômodo (lightbox)  ->  arquivos por cômodo
+------------------------------------------------------------------
+Cada cômodo da planta abre as fotos DAQUELE espaço. Renomeie as foto-XX.jpg assim
+(o site procura -1, -2, -3 ... e PARA no primeiro número que faltar):
+
+   Cômodo da planta        ->  nome do arquivo
+   ------------------------    -----------------------------
+   Quarto 1                ->  quarto-1-1.jpg, quarto-1-2.jpg, ...
+   Quarto 2                ->  quarto-2-1.jpg, quarto-2-2.jpg, ...
+   Quarto 3                ->  quarto-3-1.jpg, ...
+   Quarto 4                ->  quarto-4-1.jpg, ...
+   Banheiro (esquerda)     ->  banheiro-1-1.jpg, banheiro-1-2.jpg, ...
+   Banheiro (direita)      ->  banheiro-2-1.jpg, ...
+   Sala                    ->  sala-1.jpg, sala-2.jpg, ...
+   Cozinha                 ->  cozinha-1.jpg, cozinha-2.jpg, ...
+   Churrasqueira           ->  churrasqueira-1.jpg, churrasqueira-2.jpg, ...
+
+REGRAS
+- Use sempre .jpg (minúsculo), sem acento e sem espaço no nome.
+- Numere começando do 1, sem pular (ex.: sala-1, sala-2, sala-3).
+- Máximo ~15 fotos por cômodo.
+- Não tem foto de um cômodo? Tudo bem: ao clicar nele, o site mostra
+  "📷 Fotos em breve" e NÃO quebra.
+
+DICA: abra a pasta no modo "miniaturas" (ícones grandes) pra ver as foto-XX e ir
+renomeando. As que não usar, pode deixar ou apagar — o site só usa casa-NN.jpg e os
+nomes de cômodo acima.
+========================================================
