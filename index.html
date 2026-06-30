@@ -183,6 +183,9 @@ html[data-theme="dark"] .audio-aviso{color:#ff8a99}
 .jogador.craque .camisa{background:#fff;color:var(--verde);box-shadow:0 0 0 3px var(--amarelo)}
 .jogador small{display:block;color:#fff;font-size:.68rem;margin-top:3px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .linha-time.vazia{display:none}
+/* slot vazio do campo (jogador ainda não definido) */
+.jogador.vazio .camisa{background:rgba(255,255,255,.18);color:#fff;border:2px dashed rgba(255,255,255,.7);box-shadow:none}
+.jogador.vazio small{color:#e8f3ea;opacity:.85;font-style:italic}
 /* Suplentes (banco) */
 .banco{margin-top:14px}
 .banco h3{margin:0 0 8px;font-size:1.05rem;color:var(--verde)}
@@ -1146,66 +1149,83 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
 })();
 
 // 8) ESCALAÇÃO dinâmica (aba ESCALACAO: A=Nome, B=Posição, C=Número)
+// Desenha SEMPRE o 4-3-3 completo (slots fixos); preenche com a planilha, "?" nos vazios.
 (async function escalacao(){
   const box=$('escalacaoConteudo');
-  // classifica a posição (texto) em uma das 4 linhas; default MEI
+  // formação 4-3-3, de cima pra baixo, com os rótulos fixos de cada slot
+  const FORMACAO=[
+    {cat:'ATA', slots:['Atacante','Atacante','Atacante']},
+    {cat:'MEI', slots:['Meia','Meia','Meia']},
+    {cat:'DEF', slots:['Lateral','Zaga','Zaga','Lateral']},
+    {cat:'GOL', slots:['Goleiro']}
+  ];
+  // classifica a posição (texto) em uma das 4 categorias; default MEI
   function setor(pos){
     const p=String(pos||'').toLowerCase();
     if(/gol/.test(p)) return 'GOL';
-    if(/zag|defes|later|lateral|ala|beque|líbero|libero/.test(p)) return 'DEF';
+    if(/zag|defes|later|lateral|ala|beque/.test(p)) return 'DEF';
     if(/atac|ata|ponta|centroav|artilh/.test(p)) return 'ATA';
     if(/mei|volan|armad/.test(p)) return 'MEI';
     return 'MEI';
   }
-  function camisaJogador(j){
+  function camisaCheia(j){
     const craque = j.num===10 ? ' craque' : '';
     const nome = j.nome.split(/\s+/)[0]; // 1º nome (cabe melhor no celular)
     return `<div class="jogador${craque}"><div class="camisa">${j.num}</div><small>${nome}</small></div>`;
   }
+  function camisaVazia(rotulo){
+    return `<div class="jogador vazio"><div class="camisa">?</div><small class="slot-pos">${rotulo}</small></div>`;
+  }
+
+  // lê a planilha; em caso de erro, segue com tudo vazio (o campo aparece mesmo assim)
+  const titulares={GOL:[],DEF:[],MEI:[],ATA:[]}, banco=[]; let semNumero=0, erro=false;
   try{
     const rows=await lerGviz('ESCALACAO');
-    const titulares={GOL:[],DEF:[],MEI:[],ATA:[]}, banco=[]; let semNumero=0;
     rows.forEach((r,idx)=>{
       const nome=cel(r,0), pos=cel(r,1); let num=cel(r,2);
       if(idx===0 && String(nome).toUpperCase().includes('NOME')) return; // pula cabeçalho se vier como linha
       if(nome==null||String(nome).trim()==='') return;
       num=parseInt(String(num==null?'':num).replace(/[^\d]/g,''),10);
-      if(!num){ semNumero++; return; }                 // sem número/0 -> não entra
+      if(!num){ semNumero++; return; }                 // sem número/0 -> ignora
       const j={nome:String(nome).trim(), pos:(pos!=null?String(pos).trim():''), num};
       if(num>=1 && num<=11) titulares[setor(j.pos)].push(j);
       else banco.push(j);                              // > 11 -> banco
     });
+  }catch(e){ erro=true; }
 
-    // ninguém com número ainda (aba vazia ou só nomes sem número) -> estado amigável
-    const escalados = titulares.GOL.length+titulares.DEF.length+titulares.MEI.length+titulares.ATA.length+banco.length;
-    if(escalados===0){
-      box.innerHTML='<p class="estado-neutro">🧤 Escalação ainda não definida ⏳</p>'+
-        (semNumero?`<p class="esc-aviso">${semNumero} ${semNumero===1?'jogador confirmado':'jogadores confirmados'}, aguardando os números 😉</p>`:'');
-      return;
+  // ordena por número (visual mais organizado)
+  Object.values(titulares).forEach(arr=>arr.sort((a,b)=>a.num-b.num));
+  banco.sort((a,b)=>a.num-b.num);
+
+  // monta o gramado SEMPRE completo: cada linha tem os slots fixos + extras se sobrar gente
+  let html='<div class="gramado" aria-label="Escalação 4-3-3">';
+  FORMACAO.forEach(({cat,slots})=>{
+    const jogadores=titulares[cat];
+    const total=Math.max(slots.length, jogadores.length); // não perde ninguém: linha cresce se precisar
+    let linha='';
+    for(let i=0;i<total;i++){
+      if(i<jogadores.length) linha+=camisaCheia(jogadores[i]);          // slot preenchido
+      else linha+=camisaVazia(slots[i] || '—');                         // slot vazio com rótulo
     }
+    html+=`<div class="linha-time">${linha}</div>`;
+  });
+  html+='</div>';
 
-    // ordena cada setor por número (visual mais organizado)
-    Object.values(titulares).forEach(arr=>arr.sort((a,b)=>a.num-b.num));
-    banco.sort((a,b)=>a.num-b.num);
-
-    // monta o gramado: de cima pra baixo ATAQUE, MEIO, DEFESA, GOLEIRO
-    const linha=(arr)=>`<div class="linha-time${arr.length?'':' vazia'}">${arr.map(camisaJogador).join('')}</div>`;
-    let html='<div class="gramado" aria-label="Escalação da galera">'+
-      linha(titulares.ATA)+linha(titulares.MEI)+linha(titulares.DEF)+linha(titulares.GOL)+'</div>';
-
-    // banco (suplentes): número > 11
-    if(banco.length){
-      html+='<div class="banco"><h3>🪑 Suplentes (banco)</h3><ul>'+
-        banco.map(j=>`<li><span class="nb">#${j.num}</span> <span>${j.nome}</span>`+
-          (j.pos?` <span class="pos">(${j.pos})</span>`:'')+`</li>`).join('')+'</ul></div>';
-    }
-    // aviso discreto pros que ainda não têm número
-    if(semNumero){ html+=`<p class="esc-aviso">+ ${semNumero} ${semNumero===1?'jogador':'jogadores'} a definir (sem número ainda)</p>`; }
-
-    box.innerHTML=html;
-  }catch(e){
-    box.innerHTML='<p class="estado-neutro">🧤 Escalação ainda não definida ⏳</p>';
+  // banco (suplentes): número > 11
+  if(banco.length){
+    html+='<div class="banco"><h3>🪑 Suplentes (banco)</h3><ul>'+
+      banco.map(j=>`<li><span class="nb">#${j.num}</span> <span>${j.nome}</span>`+
+        (j.pos?` <span class="pos">(${j.pos})</span>`:'')+`</li>`).join('')+'</ul></div>';
   }
+  // aviso discreto
+  const titularesQtd=titulares.GOL.length+titulares.DEF.length+titulares.MEI.length+titulares.ATA.length;
+  if(erro || (titularesQtd===0 && !banco.length)){
+    html+='<p class="esc-aviso">Vai preenchendo conforme a galera confirma ⏳</p>';
+  } else if(semNumero){
+    html+=`<p class="esc-aviso">+ ${semNumero} ${semNumero===1?'jogador':'jogadores'} a definir (sem número ainda)</p>`;
+  }
+
+  box.innerHTML=html;
 })();
 </script>
 </body>
