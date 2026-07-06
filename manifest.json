@@ -1,0 +1,17 @@
+{
+  "name": "Churrasco do Orelha — Niver do PV",
+  "short_name": "Churrasco PV",
+  "description": "Convite e app do aniversário do Paulo Victor em Cabo Frio (10–12/07/2026).",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0D0D0D",
+  "theme_color": "#E30613",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
