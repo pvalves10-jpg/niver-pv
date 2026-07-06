@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0a8f3c" />
-<title>A taça será nossa, e o churrasco também! 🌎🍗 — Niver do PV</title>
+<meta name="theme-color" content="#E30613" />
+<title>🔥 Churrasco do Orelha 🍗 — Niver do PV</title>
 <meta name="description" content="Venha celebrar o niver do Paulo Victor estilo Copa em Cabo Frio (Foguete), 10 a 12/07. Confirma tua escalação! ⚽🍗" />
 
 <!-- ===== Open Graph (preview bonito no WhatsApp/redes) =====
      OBS: para o preview do zap funcionar, o site precisa estar HOSPEDADO (https).
      Troque a URL abaixo pela URL pública real quando publicar. -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="A taça será nossa, e o churrasco também! 🌎🍗" />
+<meta property="og:title" content="🔥 Churrasco do Orelha 🍗" />
 <meta property="og:description" content="Niver do PV estilo Copa em Cabo Frio (Foguete), 10–12/07. Confirma tua escalação! ⚽" />
 <meta property="og:image" content="https://pvalves10-jpg.github.io/niver-pv/assets/hero.jpg" />
 <meta property="og:url" content="https://pvalves10-jpg.github.io/niver-pv/" />
@@ -24,21 +24,21 @@
    TEMA COPA — variáveis de cor (com modo escuro)
    ========================================================= */
 :root{
-  --verde:#0a8f3c; --verde-esc:#076b2c;
-  --amarelo:#ffcf1f; --amarelo-esc:#e6b400;
-  --azul:#1f4fb0; --gramado:#0e7a36;
-  --bg:#f4f7f2; --surface:#ffffff; --texto:#15231a; --texto-suave:#4a5a50;
-  --borda:#dde6dd; --sombra:0 6px 20px rgba(0,0,0,.10);
+  --verde:#E30613; --verde-esc:#B3050F;
+  --amarelo:#F2C200; --amarelo-esc:#C99A00;
+  --azul:#1A1A1A; --gramado:#0D0D0D;
+  --bg:#F5F5F5; --surface:#ffffff; --texto:#141414; --texto-suave:#5A5A5A;
+  --borda:#E3E3E3; --sombra:0 6px 20px rgba(0,0,0,.10);
   --radius:18px; --maxw:560px;
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#0e1512; --surface:#16201b; --texto:#eaf2ec; --texto-suave:#a8bdb0;
-    --borda:#26342c; --sombra:0 6px 22px rgba(0,0,0,.45); }
+  :root{ --bg:#0D0D0D; --surface:#181818; --texto:#F2F2F2; --texto-suave:#B0B0B0;
+    --borda:#2A2A2A; --sombra:0 6px 22px rgba(0,0,0,.45); }
 }
-html[data-theme="dark"]{ --bg:#0e1512; --surface:#16201b; --texto:#eaf2ec; --texto-suave:#a8bdb0;
-  --borda:#26342c; --sombra:0 6px 22px rgba(0,0,0,.45); }
-html[data-theme="light"]{ --bg:#f4f7f2; --surface:#ffffff; --texto:#15231a; --texto-suave:#4a5a50;
-  --borda:#dde6dd; --sombra:0 6px 20px rgba(0,0,0,.10); }
+html[data-theme="dark"]{ --bg:#0D0D0D; --surface:#181818; --texto:#F2F2F2; --texto-suave:#B0B0B0;
+  --borda:#2A2A2A; --sombra:0 6px 22px rgba(0,0,0,.45); }
+html[data-theme="light"]{ --bg:#F5F5F5; --surface:#ffffff; --texto:#141414; --texto-suave:#5A5A5A;
+  --borda:#E3E3E3; --sombra:0 6px 20px rgba(0,0,0,.10); }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -69,9 +69,9 @@ h2.sec{font-size:1.6rem; margin:0 0 4px; color:var(--verde)}
 @media (max-width:600px){ .nav{position:static} }
 
 /* HERO */
-.hero{position:relative;color:#fff;text-align:center;background:#063d1c;overflow:hidden}
+.hero{position:relative;color:#fff;text-align:center;background:#1A0203;overflow:hidden}
 .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55}
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,40,18,.35) 0%,rgba(4,40,18,.55) 55%,rgba(4,40,18,.92) 100%)}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,2,3,.35) 0%,rgba(20,2,3,.55) 55%,rgba(20,2,3,.94) 100%)}
 .hero .conteudo{position:relative;z-index:2;padding:54px 18px 40px}
 .hero .badge{display:inline-block;background:var(--amarelo);color:#1a1a00;font-weight:800;font-size:.78rem;letter-spacing:1px;padding:5px 12px;border-radius:999px;text-transform:uppercase}
 .hero h1{font-size:2.05rem;margin:14px 0 6px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
@@ -142,7 +142,7 @@ h2.sec{font-size:1.6rem; margin:0 0 4px; color:var(--verde)}
 .tempo-card .ico{font-size:2rem;line-height:1.2}
 .tempo-card .temp{font-weight:800}
 .tempo-card .min{color:var(--texto-suave);font-weight:600}
-.tempo-card .chuva{font-size:.72rem;color:var(--azul);margin-top:2px}
+.tempo-card .chuva{font-size:.72rem;color:var(--verde);margin-top:2px}
 .aviso-suave{font-size:.85rem;color:var(--texto-suave)}
 
 /* ÁUDIOS */
@@ -174,13 +174,16 @@ html[data-theme="dark"] .audio-aviso{color:#ff8a99}
 .gag-texto{font-weight:800;color:var(--verde);margin-top:6px}
 
 /* ESCALAÇÃO */
-.gramado{background:repeating-linear-gradient(0deg,#0e7a36 0 28px,#0c6e31 28px 56px);border-radius:var(--radius);padding:18px 8px;position:relative;border:2px solid rgba(255,255,255,.25)}
-.gramado::before{content:"";position:absolute;left:8px;right:8px;top:50%;height:2px;background:rgba(255,255,255,.45)}
-.gramado::after{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;border:2px solid rgba(255,255,255,.45);border-radius:50%;transform:translate(-50%,-50%)}
+.gramado{background:repeating-linear-gradient(0deg,#B3050F 0 28px,#0D0D0D 28px 56px);border-radius:var(--radius);padding:18px 8px;position:relative;border:2px solid rgba(255,255,255,.30)}
+.gramado::before{content:"";position:absolute;left:8px;right:8px;top:50%;height:2px;background:rgba(255,255,255,.55)}
+.gramado::after{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;border:2px solid rgba(255,255,255,.55);border-radius:50%;transform:translate(-50%,-50%)}
 .linha-time{display:flex;justify-content:space-around;position:relative;z-index:2;margin:10px 0}
 .jogador{text-align:center;width:64px}
-.camisa{width:40px;height:40px;margin:0 auto;border-radius:50%;background:var(--amarelo);color:#1a1500;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;font-size:.95rem}
-.jogador.craque .camisa{background:#fff;color:var(--verde);box-shadow:0 0 0 3px var(--amarelo)}
+.camisa{width:40px;height:40px;margin:0 auto;border-radius:50%;
+  background:repeating-linear-gradient(180deg,#E30613 0 6px,#1A1A1A 6px 12px);
+  color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;
+  border:2px solid #fff;font-size:.95rem;text-shadow:0 1px 2px rgba(0,0,0,.85)}
+.jogador.craque .camisa{background:#fff;color:#E30613;box-shadow:0 0 0 3px var(--amarelo)}
 .jogador small{display:block;color:#fff;font-size:.68rem;margin-top:3px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .linha-time.vazia{display:none}
 /* slot vazio do campo (jogador ainda não definido) */
@@ -288,12 +291,12 @@ footer{text-align:center;color:var(--texto-suave);font-size:.78rem;padding:10px 
 
 <!-- ============ 1. HERO ============ -->
 <header class="hero" id="hero">
-  <img class="bg" src="assets/hero.jpg" alt="Arte de aniversário do Paulo Victor com tema Copa do Mundo do Brasil"
+  <img class="bg" src="assets/hero.jpg" alt="Arte de aniversário do Paulo Victor — Churrasco do Orelha, tema Flamengo"
        width="1000" height="558" onerror="this.style.display='none'" />
   <div class="overlay"></div>
   <div class="conteudo">
     <span class="badge">⚽ Festa de aniversário do PV</span>
-    <h1 class="titulo">A taça será nossa,<br>e o churrasco também! 🌎🍗</h1>
+    <h1 class="titulo">🔥 Churrasco do Orelha 🍗</h1>
     <p class="data">📅 10 a 12/07 &nbsp;·&nbsp; <span class="pin">📍 Cabo Frio (Foguete)</span></p>
     <p class="sub-hero">Estádio de frente pro mar, churrasqueira estalando no aquecimento e cerveja para hidratar. Bora?</p>
     <a class="btn btn-cta" href="https://forms.gle/aDeycGQSMHgBnGFU7" target="_blank" rel="noopener" onclick="festejar()">⚽ Confirmar minha escalação</a>
@@ -926,7 +929,7 @@ async function sondaFotos(prefix, max=15){
    ========================================================================= */
 function confete(){
   if(reduzMov)return;
-  const camada=$('confete'); const emojis=['⚽','🏆','🟢','🟡','🎉','🍗'];
+  const camada=$('confete'); const emojis=['❤️','🖤','🔴','⚫','⚽','🏆'];
   for(let i=0;i<26;i++){
     const p=document.createElement('span'); p.className='confete-peca'; p.textContent=emojis[i%emojis.length];
     p.style.left=Math.random()*100+'vw'; p.style.fontSize=(12+Math.random()*16)+'px';
@@ -1227,6 +1230,52 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
 
   box.innerHTML=html;
 })();
+
+/* =========================================================================
+   MODO EVENTO — a partir de CONFIG.alvo (10/07/2026), Pagamentos + Mídias
+   sobem para logo após o HERO. Override: ?modoEvento=1 / =0
+   ========================================================================= */
+function aplicarModoEvento(){
+  // 1) decidir se liga
+  const q = new URLSearchParams(location.search).get('modoEvento');
+  let ligado;
+  if (q === '1')      ligado = true;
+  else if (q === '0') ligado = false;
+  else                ligado = new Date() >= CONFIG.alvo;   // gatilho por data
+  if (!ligado) return;                                       // antes da data: nada muda
+
+  // 2) mover as SEÇÕES (nós existentes -> listeners/loaders preservados)
+  const hero = $('hero'), pag = $('pagamentos'), mid = $('midias');
+  if (hero && pag && mid){
+    const body = document.body;
+    body.insertBefore(mid, hero.nextSibling);   // hero -> midias
+    body.insertBefore(pag, mid);                // hero -> pagamentos -> midias
+  }
+
+  // 3) mover os LINKS do nav (Pagamentos, Mídias) logo após "Início"
+  const linkInicio = document.querySelector('.nav a[href="#hero"]');
+  const linkPag    = document.querySelector('.nav a[href="#pagamentos"]');
+  const linkMid    = document.querySelector('.nav a[href="#midias"]');
+  if (linkInicio && linkPag && linkMid){
+    const navWrap = linkInicio.parentNode;
+    navWrap.insertBefore(linkMid, linkInicio.nextSibling);
+    navWrap.insertBefore(linkPag, linkMid);
+  }
+
+  // 4) hint discreto (opcional, idempotente)
+  if (pag && !$('modoEventoHint')){
+    const hint = document.createElement('p');
+    hint.id = 'modoEventoHint';
+    hint.textContent = '🔴⚫ Modo evento — envie seus comprovantes e fotos';
+    hint.style.cssText =
+      'margin:10px 0 0;padding:8px 12px;border-radius:12px;'+
+      'background:var(--bg);color:var(--texto-suave);'+
+      'font-size:.9rem;font-weight:700;text-align:center';
+    const wrap = pag.querySelector('.wrap') || pag;
+    wrap.insertBefore(hint, wrap.firstChild);
+  }
+}
+aplicarModoEvento();
 </script>
 </body>
 </html>
