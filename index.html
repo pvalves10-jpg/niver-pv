@@ -365,6 +365,77 @@ footer{text-align:center;color:var(--texto-suave);font-size:.78rem;padding:10px 
 .inst-bloco h4{margin:0 0 8px;font-size:1rem}
 .inst-passos{font-size:.9rem;line-height:1.5;margin:8px 0 0}
 .inst-ico{display:inline-block;padding:0 3px}
+
+/* =========================================================
+   JOGOS — hub (galeria) + views + jogos novos
+   ========================================================= */
+.jogos-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:10px}
+@media(min-width:520px){ .jogos-grid{grid-template-columns:1fr 1fr} }
+.jogo-card{display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--borda);border-radius:var(--radius);overflow:hidden;cursor:pointer;padding:0;box-shadow:var(--sombra);transition:transform .12s}
+.jogo-card:hover{transform:translateY(-3px)}
+.jogo-card img{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;background:#222}
+.jogo-card-nome{font-weight:800;font-size:1.05rem;padding:10px 12px 2px}
+.jogo-card-desc{font-size:.85rem;color:var(--texto-suave);padding:0 12px 12px}
+.jg-voltar{background:transparent;border:0;color:var(--verde);font-weight:800;cursor:pointer;padding:4px 0;font-size:.95rem}
+.jogo-titulo{margin:.2rem 0 .5rem;font-size:1.3rem}
+.jogo-titulo small{font-weight:600;color:var(--texto-suave);font-size:.78rem}
+.jg-temas{display:flex;flex-wrap:wrap;gap:8px}
+.jg-temas label{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--borda);border-radius:10px;padding:7px 10px;font-size:.85rem;font-weight:700;cursor:pointer}
+.jg-modo-label{text-align:center;font-weight:800;margin:2px 0}
+.jg-seg-wrap{flex-wrap:wrap}
+.jg-seg-wrap .jg-seg-b{flex:1 1 calc(50% - 5px);min-width:calc(50% - 5px)}
+/* Stop */
+.st-letra{font-size:3.6rem;font-weight:900;text-align:center;color:var(--verde);margin:6px 0;line-height:1}
+.st-cats-lista{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.st-cats-lista li{background:var(--bg);border:1px solid var(--borda);border-radius:8px;padding:8px;font-weight:700;font-size:.85rem}
+.st-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.st-row span{flex:1;font-weight:700}
+.st-row input{width:70px;padding:8px;border:1px solid var(--borda);border-radius:8px;background:var(--bg);color:var(--texto);text-align:center;font-size:1rem}
+/* 2 Verdades 1 Mentira */
+.tm-linha{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tm-linha input[type=radio]{width:20px;height:20px;flex:0 0 auto}
+.tm-frase{flex:1;padding:10px;border:1px solid var(--borda);border-radius:10px;background:var(--bg);color:var(--texto);font-size:.95rem}
+.tm-frases{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.tm-card{background:var(--surface);border:2px solid var(--borda);border-radius:12px;padding:14px;font-weight:700;text-align:center}
+.tm-card.mentira{border-color:#E30613;background:rgba(227,6,19,.14)}
+.tm-card.verdade{border-color:#1a9e4b;background:rgba(26,158,75,.1)}
+
+/* Quem Sou Eu */
+.ts-fase{text-align:center;margin:10px 0}
+.ts-rot{color:var(--texto-suave);font-size:.9rem;margin:0}
+.ts-nome-alvo{font-size:2rem;font-weight:900;color:var(--verde);margin:2px 0 10px}
+.ts-instr{font-size:.95rem;margin:8px 0}
+#tsInput{width:100%;padding:12px;border:1px solid var(--borda);border-radius:12px;background:var(--bg);color:var(--texto);font-size:1.05rem;text-align:center}
+.ts-contagem{font-size:1.1rem;font-weight:800;margin:16px 0}
+.ts-contagem #tsCd{color:var(--verde);font-size:1.5rem}
+.ts-secreto{font-size:2.1rem;font-weight:900;background:#151515;color:#fff;border-radius:var(--radius);padding:24px 12px;margin:10px 0;word-break:break-word}
+
+/* Show do Milhão */
+.sm-topo{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:6px 0}
+.sm-quem{font-weight:800}
+.sm-premio{font-weight:900;color:var(--amarelo-esc);font-size:1.15rem}
+.sm-escada{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:6px 0 10px}
+.sm-rung{font-size:.66rem;padding:3px 6px;border-radius:8px;background:var(--bg);color:var(--texto-suave);border:1px solid var(--borda);font-weight:700}
+.sm-rung.atual{background:var(--amarelo);color:#1a1a00;border-color:var(--amarelo)}
+.sm-rung.segura{border-color:var(--amarelo-esc);border-width:2px}
+.sm-rung.feito{opacity:.45}
+.sm-pergunta{background:var(--surface);border:1px solid var(--borda);border-radius:14px;padding:14px;font-weight:700;text-align:center;box-shadow:var(--sombra);margin-bottom:10px}
+.sm-ops{display:flex;flex-direction:column;gap:8px}
+.sm-op{display:flex;gap:10px;align-items:center;text-align:left;background:var(--surface);border:2px solid var(--borda);border-radius:12px;padding:12px;font-weight:700;cursor:pointer;font-size:.95rem;color:var(--texto)}
+.sm-op .letra{background:var(--verde);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:800;font-size:.85rem}
+.sm-op:disabled{cursor:default}
+.sm-op.oculta{opacity:.25;pointer-events:none}
+.sm-op.certa{border-color:#1a9e4b;background:rgba(26,158,75,.16)}
+.sm-op.errada{border-color:#E30613;background:rgba(227,6,19,.14)}
+.sm-ajudas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sm-ajuda{flex:1;min-width:110px;background:var(--azul);color:#fff;border:0;border-radius:10px;padding:10px;font-weight:800;cursor:pointer;font-size:.82rem}
+.sm-ajuda:disabled{opacity:.35;cursor:default}
+.sm-ajuda.sm-parar{background:#8f0410}
+.sm-dica{background:var(--bg);border:1px dashed var(--borda);border-radius:10px;padding:10px;font-size:.9rem;text-align:center;margin-top:10px}
+.sm-resultado-msg{text-align:center;font-size:1.05rem;margin:8px 0 4px}
+.sm-jog-row{display:flex;gap:8px;margin-bottom:8px}
+.sm-jog-row input{flex:1;padding:10px;border:1px solid var(--borda);border-radius:10px;background:var(--bg);color:var(--texto);font-size:.95rem}
+.sm-jog-row button{background:transparent;border:0;color:var(--verde);font-weight:800;cursor:pointer;font-size:1.2rem}
 </style>
 </head>
 <body>
@@ -773,88 +844,359 @@ footer{text-align:center;color:var(--texto-suave);font-size:.78rem;padding:10px 
   </div>
 </section>
 
-<!-- ============ JOGOS — Imagem & Ação ============ -->
+<!-- ============ JOGOS ============ -->
 <section id="jogos" data-page="jogos">
   <div class="wrap">
-    <h2 class="sec">🎮 Imagem &amp; Ação</h2>
-    <p class="sub">O clássico rubro-negro: um representa (desenho ou mímica) e a galera adivinha contra o relógio. Monte os times com quem confirmou! 🔴⚫</p>
+    <h2 class="sec">🎮 Jogos da galera</h2>
+    <p class="sub">Escolha um jogo pra bombar o rolê! 🔴⚫</p>
 
-    <!-- ETAPA 1: SETUP -->
-    <div id="jgSetup">
-      <div class="jg-card">
-        <h3 class="jg-h">1️⃣ Quem vai jogar?</h3>
-        <div id="jgPessoas" class="jg-chips"><span class="jg-info">Carregando confirmados da planilha… ⏳</span></div>
-        <div class="jg-add">
-          <input id="jgNovo" type="text" placeholder="Adicionar outro nome…" autocomplete="off" />
-          <button class="btn btn-verde" id="jgAdd" type="button">+ Add</button>
-        </div>
-        <p class="jg-info" id="jgSelInfo">0 selecionados</p>
-      </div>
-
-      <div class="jg-card">
-        <h3 class="jg-h">2️⃣ Quantos times?</h3>
-        <div class="jg-seg" id="jgQtd">
-          <button type="button" class="jg-seg-b ativo" data-n="2">2 times</button>
-          <button type="button" class="jg-seg-b" data-n="3">3 times</button>
-          <button type="button" class="jg-seg-b" data-n="4">4 times</button>
-        </div>
-        <h3 class="jg-h">3️⃣ Regras</h3>
-        <div class="jg-regras">
-          <label>⏱️ Tempo por rodada
-            <select id="jgTempo">
-              <option value="30">30s</option>
-              <option value="45">45s</option>
-              <option value="60" selected>60s</option>
-              <option value="90">90s</option>
-              <option value="120">120s</option>
-            </select>
-          </label>
-          <label>🏁 Pontos p/ vencer
-            <select id="jgMeta">
-              <option value="10">10</option>
-              <option value="15" selected>15</option>
-              <option value="20">20</option>
-              <option value="25">25</option>
-            </select>
-          </label>
-        </div>
-      </div>
-
-      <button class="btn btn-cta btn-block" id="jgComecar" type="button">🎲 Sortear times e começar</button>
+    <!-- HUB: galeria de jogos -->
+    <div id="jgHub" class="jogos-grid">
+      <button class="jogo-card" type="button" data-game="imagemacao">
+        <img src="assets/jogo-imagem-acao.png?v=1" alt="Imagem e Ação" loading="lazy" />
+        <span class="jogo-card-nome">🎨 Imagem &amp; Ação</span>
+        <span class="jogo-card-desc">Desenho ou mímica, a galera adivinha. Times + placar.</span>
+      </button>
+      <button class="jogo-card" type="button" data-game="testa">
+        <img src="assets/jogo-quem-sou-eu.png?v=1" alt="Quem Sou Eu" loading="lazy" />
+        <span class="jogo-card-nome">🧠 Quem Sou Eu?</span>
+        <span class="jogo-card-desc">Celular na testa, os outros dão dicas. Estilo Heads Up!</span>
+      </button>
+      <button class="jogo-card" type="button" data-game="show">
+        <img src="assets/jogo-show-milhao.png?v=1" alt="Show do Milhão" loading="lazy" />
+        <span class="jogo-card-nome">💰 Show do Milhão</span>
+        <span class="jogo-card-desc">Trivia até R$ 1 milhão. Até 3 participantes.</span>
+      </button>
+      <button class="jogo-card" type="button" data-game="stop">
+        <img src="assets/jogo-stop.png?v=1" alt="Stop Adedonha" loading="lazy" />
+        <span class="jogo-card-nome">✋ Stop / Adedonha</span>
+        <span class="jogo-card-desc">Letra + categorias no papel. Grita STOP!</span>
+      </button>
+      <button class="jogo-card" type="button" data-game="2v1m">
+        <img src="assets/jogo-2v1m.png?v=1" alt="2 Verdades 1 Mentira" loading="lazy" />
+        <span class="jogo-card-nome">🕵️ 2 Verdades, 1 Mentira</span>
+        <span class="jogo-card-desc">Descubra quem tá mentindo. Enganou? +1!</span>
+      </button>
     </div>
 
-    <!-- ETAPA 2: JOGO -->
-    <div id="jgJogo" hidden>
-      <div class="jg-placar" id="jgPlacar"></div>
+    <!-- ============ JOGO 1: IMAGEM & AÇÃO ============ -->
+    <div class="game-view" id="game-imagemacao" hidden>
+      <button class="jg-voltar" data-voltar type="button">← Voltar aos jogos</button>
+      <h3 class="jogo-titulo">🎨 Imagem &amp; Ação</h3>
 
-      <div class="jg-vez">
-        <span class="jg-vez-time" id="jgVezTime">Time A</span>
-        <span class="jg-vez-quem">✏️ representa: <b id="jgVezQuem">—</b></span>
+      <div id="jgSetup">
+        <div class="jg-card">
+          <h3 class="jg-h">1️⃣ Quem vai jogar?</h3>
+          <div id="jgPessoas" class="jg-chips"><span class="jg-info">Carregando confirmados da planilha… ⏳</span></div>
+          <div class="jg-add">
+            <input id="jgNovo" type="text" placeholder="Adicionar outro nome…" autocomplete="off" />
+            <button class="btn btn-verde" id="jgAdd" type="button">+ Add</button>
+          </div>
+          <p class="jg-info" id="jgSelInfo">0 selecionados</p>
+        </div>
+
+        <div class="jg-card">
+          <h3 class="jg-h">2️⃣ Temas (o que pode cair)</h3>
+          <div class="jg-temas" id="jgTemas">
+            <label><input type="checkbox" value="objeto" checked> 🟡 Objetos</label>
+            <label><input type="checkbox" value="acao" checked> 🔵 Ações</label>
+            <label><input type="checkbox" value="pal" checked> 🟢 Pessoas &amp; Lugares</label>
+            <label><input type="checkbox" value="dificil" checked> 🔴 Difícil</label>
+            <label><input type="checkbox" value="festa" checked> 🎉 Praia &amp; Festa</label>
+            <label><input type="checkbox" value="todos" checked> ⭐ Todos jogam</label>
+          </div>
+        </div>
+
+        <div class="jg-card">
+          <h3 class="jg-h">3️⃣ Times &amp; regras</h3>
+          <div class="jg-seg" id="jgQtd">
+            <button type="button" class="jg-seg-b ativo" data-n="2">2 times</button>
+            <button type="button" class="jg-seg-b" data-n="3">3 times</button>
+            <button type="button" class="jg-seg-b" data-n="4">4 times</button>
+          </div>
+          <div class="jg-regras">
+            <label>⏱️ Tempo/rodada
+              <select id="jgTempo">
+                <option value="30">30s</option><option value="45">45s</option>
+                <option value="60" selected>60s</option><option value="90">90s</option><option value="120">120s</option>
+              </select>
+            </label>
+            <label>🏁 Pontos p/ vencer
+              <select id="jgMeta">
+                <option value="10">10</option><option value="15" selected>15</option>
+                <option value="20">20</option><option value="25">25</option>
+              </select>
+            </label>
+            <label>🎭 Modo
+              <select id="jgModo">
+                <option value="livre" selected>Desenho ou mímica</option>
+                <option value="desenho">Só desenho ✏️</option>
+                <option value="mimica">Só mímica 🤸</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-cta btn-block" id="jgComecar" type="button">🎲 Sortear times e começar</button>
       </div>
 
-      <div class="jg-carta" id="jgCarta">
-        <div class="jg-cat" id="jgCat">Categoria</div>
-        <div class="jg-palavra" id="jgPalavra">? ? ?</div>
-        <button class="btn btn-verde jg-ver" id="jgVer" type="button" hidden>👁️ Ver a palavra (só quem representa)</button>
+      <div id="jgJogo" hidden>
+        <div class="jg-placar" id="jgPlacar"></div>
+        <div class="jg-vez">
+          <span class="jg-vez-time" id="jgVezTime">Time A</span>
+          <span class="jg-vez-quem">✏️ representa: <b id="jgVezQuem">—</b></span>
+        </div>
+        <div class="jg-modo-label" id="jgModoLabel"></div>
+        <div class="jg-carta" id="jgCarta">
+          <div class="jg-cat" id="jgCat">Categoria</div>
+          <div class="jg-palavra" id="jgPalavra">? ? ?</div>
+          <button class="btn btn-verde jg-ver" id="jgVer" type="button" hidden>👁️ Ver a palavra (só quem representa)</button>
+        </div>
+        <div class="jg-timer" id="jgTimer">01:00</div>
+        <div class="jg-acoes">
+          <button class="btn btn-cta" id="jgIniciar" type="button">▶️ Iniciar rodada</button>
+          <button class="btn btn-azul" id="jgPausar" type="button" hidden>⏸️ Pausar</button>
+          <button class="btn btn-verde" id="jgAcertou" type="button" hidden>✅ Acertou! (+1)</button>
+          <button class="btn jg-passou" id="jgPassou" type="button" hidden>⏭️ Passou</button>
+        </div>
+        <button class="jg-reiniciar" id="jgReiniciar" type="button">↺ Reiniciar jogo</button>
       </div>
 
-      <div class="jg-timer" id="jgTimer">01:00</div>
-
-      <div class="jg-acoes">
-        <button class="btn btn-cta" id="jgIniciar" type="button">▶️ Iniciar rodada</button>
-        <button class="btn btn-azul" id="jgPausar" type="button" hidden>⏸️ Pausar</button>
-        <button class="btn btn-verde" id="jgAcertou" type="button" hidden>✅ Acertou! (+1)</button>
-        <button class="btn jg-passou" id="jgPassou" type="button" hidden>⏭️ Passou</button>
+      <div id="jgFim" hidden>
+        <div class="jg-vencedor" id="jgVencedor">🏆 Time campeão!</div>
+        <div class="jg-placar" id="jgPlacarFim"></div>
+        <button class="btn btn-cta btn-block" id="jgDeNovo" type="button">🔁 Jogar de novo</button>
       </div>
-
-      <button class="jg-reiniciar" id="jgReiniciar" type="button">↺ Reiniciar jogo</button>
     </div>
 
-    <!-- ETAPA 3: FIM -->
-    <div id="jgFim" hidden>
-      <div class="jg-vencedor" id="jgVencedor">🏆 Time campeão!</div>
-      <div class="jg-placar" id="jgPlacarFim"></div>
-      <button class="btn btn-cta btn-block" id="jgDeNovo" type="button">🔁 Jogar de novo</button>
+    <!-- ============ JOGO 2: QUEM SOU EU? ============ -->
+    <div class="game-view" id="game-testa" hidden>
+      <button class="jg-voltar" data-voltar type="button">← Voltar aos jogos</button>
+      <h3 class="jogo-titulo">🧠 Quem Sou Eu? <small>(na testa · estilo Heads Up!)</small></h3>
+      <p class="sub">Cada um recebe um nome secreto (os outros escolhem). Segure o celular na testa: o nome aparece pra galera, que dá dicas. Quem adivinhar mais rápido vence! 🏆</p>
+
+      <div id="tsSetup">
+        <div class="jg-card">
+          <h3 class="jg-h">Quem vai jogar?</h3>
+          <div id="tsPessoas" class="jg-chips"><span class="jg-info">Carregando confirmados… ⏳</span></div>
+          <div class="jg-add">
+            <input id="tsNovo" type="text" placeholder="Adicionar nome…" autocomplete="off" />
+            <button class="btn btn-verde" id="tsAdd" type="button">+ Add</button>
+          </div>
+          <p class="jg-info" id="tsSelInfo">0 selecionados</p>
+        </div>
+        <div class="jg-card">
+          <h3 class="jg-h">Tipo de nomes</h3>
+          <div class="jg-seg jg-seg-wrap" id="tsTipo">
+            <button type="button" class="jg-seg-b ativo" data-t="livre">🆓 Livre</button>
+            <button type="button" class="jg-seg-b" data-t="anime">🍥 Anime</button>
+            <button type="button" class="jg-seg-b" data-t="filmes">🎬 Filmes</button>
+            <button type="button" class="jg-seg-b" data-t="futebol">⚽ Futebol</button>
+          </div>
+          <p class="jg-info">No <b>Livre</b>, os outros digitam o nome de cada um. Nos demais, o app sorteia 🎲.</p>
+          <div class="jg-regras">
+            <label>⏱️ Tempo p/ adivinhar
+              <select id="tsTempo">
+                <option value="0">Sem limite</option><option value="60">60s</option>
+                <option value="90" selected>90s</option><option value="120">120s</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-cta btn-block" id="tsComecar" type="button">▶️ Começar</button>
+      </div>
+
+      <div id="tsDefinir" hidden>
+        <div class="ts-fase">
+          <p class="ts-rot">Definir o nome secreto de</p>
+          <div class="ts-nome-alvo" id="tsAlvoNome">—</div>
+          <p class="ts-instr">🙈 <b id="tsAlvoNome2">—</b>, não olhe! Passe o celular pros outros escolherem.</p>
+          <input id="tsInput" type="text" placeholder="Nome secreto (pessoa, personagem…)" autocomplete="off" />
+          <div class="jg-acoes">
+            <button class="btn btn-verde" id="tsSortear" type="button">🎲 Sortear</button>
+            <button class="btn btn-cta" id="tsConfirmar" type="button">✅ Pronto</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tsJogar" hidden>
+        <div class="ts-fase">
+          <p class="ts-rot">Na testa de</p>
+          <div class="ts-nome-alvo" id="tsJogNome">—</div>
+          <div id="tsContagem" class="ts-contagem">Segure o celular na testa! Revela em <span id="tsCd">10</span>s</div>
+          <div id="tsRevela" hidden>
+            <p class="ts-instr">Só a galera vê 👇 — deem dicas, sem falar o nome!</p>
+            <div class="ts-secreto" id="tsSecreto">•••</div>
+            <div class="jg-timer" id="tsTimer">00:00</div>
+            <div class="jg-acoes">
+              <button class="btn btn-verde" id="tsAcertou" type="button">✅ Adivinhou!</button>
+              <button class="btn jg-passou" id="tsPulou" type="button">⏭️ Passar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tsFim" hidden>
+        <div class="jg-vencedor" id="tsVencedor">🏆 Vencedor!</div>
+        <div class="jg-placar" id="tsRanking"></div>
+        <button class="btn btn-cta btn-block" id="tsDeNovo" type="button">🔁 Jogar de novo</button>
+      </div>
+    </div>
+
+    <!-- ============ JOGO 3: SHOW DO MILHÃO ============ -->
+    <div class="game-view" id="game-show" hidden>
+      <button class="jg-voltar" data-voltar type="button">← Voltar aos jogos</button>
+      <h3 class="jogo-titulo">💰 Show do Milhão</h3>
+
+      <div id="smSetup">
+        <div class="jg-card">
+          <h3 class="jg-h">Participantes (até 3)</h3>
+          <div id="smJogadores"></div>
+          <button class="btn btn-verde" id="smAddJog" type="button">+ Adicionar participante</button>
+          <p class="jg-info">Cada um joga sua rodada; no fim, o placar mostra quem levou mais 💵</p>
+        </div>
+        <button class="btn btn-cta btn-block" id="smComecar" type="button">▶️ Começar</button>
+      </div>
+
+      <div id="smJogo" hidden>
+        <div class="sm-topo">
+          <span class="sm-quem" id="smQuem">Participante</span>
+          <span class="sm-premio" id="smPremioAtual">R$ 0</span>
+        </div>
+        <div class="sm-escada" id="smEscada"></div>
+        <div class="sm-pergunta" id="smPergunta">Pergunta…</div>
+        <div class="sm-ops" id="smOps"></div>
+        <p class="sm-dica" id="smDica" hidden></p>
+        <div class="sm-ajudas">
+          <button class="sm-ajuda" id="smA5050" type="button">✂️ Elimina 2</button>
+          <button class="sm-ajuda" id="smAUni" type="button">🎓 Universitários</button>
+          <button class="sm-ajuda" id="smAPula" type="button">⏭️ Pular</button>
+          <button class="sm-ajuda sm-parar" id="smParar" type="button">🛑 Parar</button>
+        </div>
+      </div>
+
+      <div id="smFimRodada" hidden>
+        <div class="jg-vencedor" id="smResultadoTit">Resultado</div>
+        <p class="sm-resultado-msg" id="smResultadoMsg"></p>
+        <button class="btn btn-cta btn-block" id="smProximo" type="button">➡️ Continuar</button>
+      </div>
+
+      <div id="smFim" hidden>
+        <div class="jg-vencedor" id="smCampeao">🏆 Campeão!</div>
+        <div class="jg-placar" id="smPlacarFinal"></div>
+        <button class="btn btn-cta btn-block" id="smDeNovo" type="button">🔁 Jogar de novo</button>
+      </div>
+    </div>
+
+    <!-- ============ JOGO 4: STOP / ADEDONHA ============ -->
+    <div class="game-view" id="game-stop" hidden>
+      <button class="jg-voltar" data-voltar type="button">← Voltar aos jogos</button>
+      <h3 class="jogo-titulo">✋ Stop / Adedonha</h3>
+      <p class="sub">Sorteia uma letra e a galera preenche as categorias no papel. Quem terminar grita STOP! No fim, some os pontos aqui. ✍️</p>
+
+      <div id="stSetup">
+        <div class="jg-card">
+          <h3 class="jg-h">Categorias (marque as que valem)</h3>
+          <div class="jg-temas" id="stCats"></div>
+        </div>
+        <div class="jg-card">
+          <h3 class="jg-h">Jogadores (opcional — só p/ o placar)</h3>
+          <div id="stPessoas" class="jg-chips"><span class="jg-info">Carregando confirmados… ⏳</span></div>
+          <div class="jg-add">
+            <input id="stNovo" type="text" placeholder="Adicionar nome…" autocomplete="off">
+            <button class="btn btn-verde" id="stAdd" type="button">+ Add</button>
+          </div>
+          <div class="jg-regras">
+            <label>⏱️ Tempo
+              <select id="stTempo">
+                <option value="0">Sem limite (STOP)</option><option value="60">60s</option>
+                <option value="90" selected>90s</option><option value="120">120s</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-cta btn-block" id="stComecar" type="button">🎲 Sortear letra</button>
+      </div>
+
+      <div id="stJogo" hidden>
+        <div class="st-letra" id="stLetra">A</div>
+        <div class="jg-timer" id="stTimer">01:30</div>
+        <div class="jg-card">
+          <h3 class="jg-h">Preencha no papel:</h3>
+          <ul class="st-cats-lista" id="stCatsLista"></ul>
+        </div>
+        <button class="btn btn-cta btn-block" id="stStop" type="button">✋ STOP!</button>
+      </div>
+
+      <div id="stPontos" hidden>
+        <div class="jg-vencedor">✋ Letra sorteada: <span id="stLetraFim">A</span></div>
+        <p class="jg-info" id="stPontosInfo">Confiram: resposta única = 10 · repetida = 5 · em branco = 0. Digite os pontos da rodada:</p>
+        <div id="stPlacarEdit"></div>
+        <div class="jg-acoes">
+          <button class="btn btn-cta" id="stProxima" type="button">🔁 Próxima letra</button>
+          <button class="btn btn-azul" id="stEncerrar" type="button">🏁 Encerrar</button>
+        </div>
+      </div>
+
+      <div id="stFim" hidden>
+        <div class="jg-vencedor" id="stCampeao">🏆 Campeão!</div>
+        <div class="jg-placar" id="stPlacarFinal"></div>
+        <button class="btn btn-cta btn-block" id="stDeNovo" type="button">🔁 Jogar de novo</button>
+      </div>
+    </div>
+
+    <!-- ============ JOGO 5: 2 VERDADES E 1 MENTIRA ============ -->
+    <div class="game-view" id="game-2v1m" hidden>
+      <button class="jg-voltar" data-voltar type="button">← Voltar aos jogos</button>
+      <h3 class="jogo-titulo">🕵️ 2 Verdades e 1 Mentira</h3>
+      <p class="sub">Cada um escreve 3 frases sobre si — 2 verdades e 1 mentira. A galera tenta descobrir a mentira! Quem enganar mais gente, vence. 😎</p>
+
+      <div id="tmSetup">
+        <div class="jg-card">
+          <h3 class="jg-h">Quem vai jogar?</h3>
+          <div id="tmPessoas" class="jg-chips"><span class="jg-info">Carregando confirmados… ⏳</span></div>
+          <div class="jg-add">
+            <input id="tmNovo" type="text" placeholder="Adicionar nome…" autocomplete="off">
+            <button class="btn btn-verde" id="tmAdd" type="button">+ Add</button>
+          </div>
+          <p class="jg-info" id="tmSelInfo">0 selecionados</p>
+        </div>
+        <button class="btn btn-cta btn-block" id="tmComecar" type="button">▶️ Começar</button>
+      </div>
+
+      <div id="tmEscrever" hidden>
+        <div class="ts-fase">
+          <p class="ts-rot">Vez de</p>
+          <div class="ts-nome-alvo" id="tmQuem">—</div>
+          <p class="ts-instr">🙈 Só <b id="tmQuem2">—</b> deve ver! Escreva 3 frases e marque qual é a <b>MENTIRA</b>.</p>
+        </div>
+        <div class="jg-card">
+          <label class="tm-linha"><input type="radio" name="tmLie" value="0"><input type="text" class="tm-frase" id="tmF0" placeholder="Frase 1"></label>
+          <label class="tm-linha"><input type="radio" name="tmLie" value="1"><input type="text" class="tm-frase" id="tmF1" placeholder="Frase 2"></label>
+          <label class="tm-linha"><input type="radio" name="tmLie" value="2"><input type="text" class="tm-frase" id="tmF2" placeholder="Frase 3"></label>
+          <p class="jg-info">Marque o ⚪ da frase que é MENTIRA.</p>
+          <button class="btn btn-cta btn-block" id="tmPronto" type="button">✅ Pronto (passe pra galera)</button>
+        </div>
+      </div>
+
+      <div id="tmAdivinhar" hidden>
+        <div class="ts-fase"><p class="ts-rot">Qual é a mentira de</p><div class="ts-nome-alvo" id="tmQuem3">—</div></div>
+        <div class="tm-frases" id="tmFrases"></div>
+        <button class="btn btn-verde btn-block" id="tmRevelar" type="button">🔍 Revelar a mentira</button>
+        <div id="tmResultado" hidden>
+          <p class="jg-info" style="text-align:center">A galera descobriu?</p>
+          <div class="jg-acoes">
+            <button class="btn btn-cta" id="tmEnganou" type="button">😎 Enganou todos (+1)</button>
+            <button class="btn btn-azul" id="tmDescobriram" type="button">🕵️ Descobriram</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tmFim" hidden>
+        <div class="jg-vencedor" id="tmCampeao">🏆 Mais enganador!</div>
+        <div class="jg-placar" id="tmPlacar"></div>
+        <button class="btn btn-cta btn-block" id="tmDeNovo" type="button">🔁 Jogar de novo</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1518,7 +1860,8 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
     acao:{rot:'🔵 Ação',palavras:['Fazer churrasco','Nadar','Dançar','Dormir','Dirigir','Tirar selfie','Jogar futebol','Assobiar','Espirrar','Cozinhar','Abraçar','Correr na areia','Bater palma','Pescar','Chorar de rir','Cantar no karaokê','Passar protetor solar','Brindar','Roncar','Escorregar']},
     pal:{rot:'🟢 Pessoa / Animal / Lugar',palavras:['Neymar','Flamengo','Cristo Redentor','Praia do Foguete','Zico','Papagaio','Sereia','Salva-vidas','Cabo Frio','Caranguejo','Gabigol','Churrasqueiro','DJ','Aniversariante','Golfinho','Maracanã','Turista','Polvo','Vira-lata caramelo','Baleia']},
     dificil:{rot:'🔴 Difícil',palavras:['Saudade','Ressaca','Cambalhota','Déjà vu','Efeito estufa','Buraco negro','Gravidade','Piada interna','Amizade','Nostalgia','Equilíbrio','Miragem','Ironia','Pontapé inicial','Impedimento','Vaquinha (Pix)','Rateio','Time do coração','Preguiça','Ciúme']},
-    todos:{rot:'⭐ Todos jogam',palavras:['Onda do mar','Fogueira','Foto em grupo','Gol de bicicleta','Guerra de travesseiro','Fila do banheiro','Cerveja gelada','Nascer do sol','Caça ao tesouro','Karaokê','Pular onda','Espeto de carne','Bronzeado','Selfie da galera','Dança da cadeira']}
+    todos:{rot:'⭐ Todos jogam',palavras:['Onda do mar','Fogueira','Foto em grupo','Gol de bicicleta','Guerra de travesseiro','Fila do banheiro','Cerveja gelada','Nascer do sol','Caça ao tesouro','Karaokê','Pular onda','Espeto de carne','Bronzeado','Selfie da galera','Dança da cadeira']},
+    festa:{rot:'🎉 Praia & Festa',palavras:['Rubro-negro','Gol do Flamengo','Guarda-sol','Caipirinha','Espetinho','Bexiga de festa','Bolo de aniversário','Parabéns pra você','Coco gelado','Vôlei de praia','Castelo de areia','Protetor solar','Pôr do sol','Brinde','Caixa de som','Pula-pula','Churrasqueira acesa','Fantasia','Cerveja estupidamente gelada','Chapéu de aniversário']}
   };
   const CATS=Object.keys(BANCO);
 
@@ -1594,6 +1937,8 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
     pararTimer(); renderPlacar('jgPlacar');
     $('jgVezTime').textContent=timeDaVez().nome;
     $('jgVezQuem').textContent=jogadorDaVez();
+    const modo=($('jgModo')&&$('jgModo').value)||'livre'; const ml=$('jgModoLabel');
+    if(ml) ml.textContent = modo==='desenho'?'✏️ Só DESENHO':(modo==='mimica'?'🤸 Só MÍMICA':'🎨 Desenho ou 🤸 mímica');
     restante=tempoBase; mostraTimer();
     const carta=$('jgCarta'); carta.removeAttribute('data-cat');
     $('jgCat').textContent='Pronto?'; $('jgPalavra').textContent='? ? ?'; $('jgPalavra').classList.remove('escondida');
@@ -1601,8 +1946,9 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
     $('jgIniciar').hidden=false; $('jgPausar').hidden=true; $('jgAcertou').hidden=true; $('jgPassou').hidden=true;
     $('jgTimer').classList.remove('alerta');
   }
+  function catsAtivas(){ const v=Array.from(document.querySelectorAll('#jgTemas input:checked')).map(c=>c.value).filter(k=>BANCO[k]); return v.length?v:CATS; }
   function sortearCarta(){
-    const cat=CATS[Math.floor(Math.random()*CATS.length)];
+    const AT=catsAtivas(); const cat=AT[Math.floor(Math.random()*AT.length)];
     let pool=BANCO[cat].palavras.filter(p=>!usados[cat].has(p));
     if(!pool.length){ usados[cat].clear(); pool=BANCO[cat].palavras.slice(); }
     const palavra=pool[Math.floor(Math.random()*pool.length)];
@@ -1695,6 +2041,420 @@ function fmtHoraGviz(v){ const m=String(v).match(/^Date\(\d+,\d+,\d+,(\d+),(\d+)
     if(deferido){ deferido.prompt(); try{ await deferido.userChoice; }catch(e){} deferido=null; fechar(); }
   });
   if(jaInstalado){ const b=$('btnInstalarHero'); if(b) b.style.display='none'; }
+})();
+
+/* =========================================================================
+   Carregador compartilhado de confirmados (gviz) para os jogos
+   ========================================================================= */
+async function carregarConfirmados(){
+  let nomes=[];
+  for(const aba of ['QUARTOS','RESUMO','ESCALACAO']){
+    try{
+      const rows=await lerGviz(aba);
+      const lidos=(rows||[]).map(r=>cel(r,0)).filter(v=>v&&(''+v).trim()).map(v=>(''+v).trim());
+      const limpos=lidos.filter(v=>!/^(nome|nomes|pessoa|pessoas|comprovante|comprovantes)$/i.test(v));
+      if(limpos.length){ nomes=limpos; break; }
+    }catch(e){}
+  }
+  const vistos=new Set(), out=[];
+  nomes.forEach(n=>{ const k=n.toLowerCase(); if(!vistos.has(k)){ vistos.add(k); out.push(n); } });
+  return out;
+}
+
+/* =========================================================================
+   JOGOS — hub (galeria) -> abre cada jogo; botão voltar
+   ========================================================================= */
+(function(){
+  const hub=$('jgHub'); if(!hub) return;
+  const views={ imagemacao:$('game-imagemacao'), testa:$('game-testa'), show:$('game-show'), stop:$('game-stop'), '2v1m':$('game-2v1m') };
+  function abrir(id){ hub.hidden=true; Object.keys(views).forEach(k=>{ if(views[k]) views[k].hidden=(k!==id); }); window.scrollTo(0,0); }
+  function voltar(){ Object.values(views).forEach(v=>{ if(v) v.hidden=true; }); hub.hidden=false; window.scrollTo(0,0); }
+  document.querySelectorAll('.jogo-card').forEach(c=>c.addEventListener('click',()=>abrir(c.dataset.game)));
+  document.querySelectorAll('#jogos [data-voltar]').forEach(b=>b.addEventListener('click',voltar));
+  window.addEventListener('hashchange', voltar);
+})();
+
+/* =========================================================================
+   JOGO — Quem Sou Eu? (na testa, estilo Heads Up!)
+   ========================================================================= */
+(function(){
+  const setup=$('tsSetup'); if(!setup) return;
+  const FAMOSOS=['Neymar','Silvio Santos','Anitta','Homem-Aranha','Xuxa','Faustão','Messi','Batman','Shrek','Luva de Pedreiro','Gabigol','Ronaldinho','Papai Noel','Harry Potter','Mickey Mouse','Zico','Ivete Sangalo','Bob Esponja','Cristiano Ronaldo','Coringa','Cleópatra','Pelé','Wandinha','Homer Simpson','Barbie','Chaves','Freddie Mercury','Sherlock Holmes','Tiringa','Gretchen','Madonna','Michael Jackson','Whindersson Nunes','Galvão Bueno','Ana Maria Braga','Tom Cruise','Elvis Presley','Sabrina Sato'];
+  const BANCOS={
+    anime:['Goku','Naruto','Luffy','Pikachu','Sailor Moon','Saitama','Levi Ackerman','Vegeta','Sasuke','Zoro','Light Yagami','Edward Elric','Tanjiro','Bulma','Inuyasha','Ichigo','Gohan','Shinchan','Doraemon','Seiya (Cavaleiros do Zodíaco)','Kakashi','Killua','All Might','Deku','Mikasa','Eren','Bulma'],
+    filmes:['Harry Potter','Homem-Aranha','Batman','Coringa','Shrek','Woody (Toy Story)','Simba (Rei Leão)','Darth Vader','Jack Sparrow','Forrest Gump','John Wick','Neo (Matrix)','Wolverine','Homem de Ferro','Hulk','Rocky Balboa','Indiana Jones','Elsa (Frozen)','Buzz Lightyear','Gollum','Capitão América','Pantera Negra','Thor','Mestre Yoda','Willy Wonka','Rei Leão','Pica-Pau'],
+    futebol:['Neymar','Messi','Cristiano Ronaldo','Pelé','Gabigol','Zico','Ronaldinho Gaúcho','Ronaldo Fenômeno','Vinícius Jr','Mbappé','Haaland','Kaká','Romário','Roberto Carlos','Cafu','Rivaldo','Arrascaeta','Bruno Henrique','Éverton Ribeiro','Pedro','Endrick','Raphinha','Casemiro','Alisson','Thiago Silva','Suárez','Modric','De Bruyne']
+  };
+  let jogadores=[], sel=new Set(), tipo='livre', tempo=90;
+  let ordem=[], idx=0, secretos={}, resultados={}, elapsed=0, tId=null;
+
+  carregarConfirmados().then(n=>{ jogadores=n.slice(); jogadores.forEach(x=>sel.add(x)); renderChips(); });
+
+  function renderChips(){
+    const box=$('tsPessoas'); if(!box) return;
+    if(!jogadores.length){ box.innerHTML='<span class="jg-info">Ninguém na planilha ainda. Adicione nomes abaixo 👇</span>'; upSel(); return; }
+    box.innerHTML='';
+    jogadores.forEach(n=>{ const b=document.createElement('button'); b.type='button'; b.className='jg-chip'+(sel.has(n)?' on':''); b.textContent=n;
+      b.addEventListener('click',()=>{ sel.has(n)?sel.delete(n):sel.add(n); b.classList.toggle('on'); upSel(); }); box.appendChild(b); });
+    upSel();
+  }
+  function upSel(){ const e=$('tsSelInfo'); if(e) e.textContent=sel.size+' selecionado'+(sel.size===1?'':'s'); }
+  $('tsAdd')&&$('tsAdd').addEventListener('click',()=>{ const i=$('tsNovo'); const v=(i.value||'').trim(); if(!v)return; if(!jogadores.some(p=>p.toLowerCase()===v.toLowerCase())) jogadores.push(v); sel.add(v); i.value=''; renderChips(); });
+  $('tsNovo')&&$('tsNovo').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); $('tsAdd').click(); } });
+  $('tsTipo')&&$('tsTipo').addEventListener('click',e=>{ const b=e.target.closest('.jg-seg-b'); if(!b)return; document.querySelectorAll('#tsTipo .jg-seg-b').forEach(x=>x.classList.remove('ativo')); b.classList.add('ativo'); tipo=b.dataset.t; });
+
+  function mostra(el){ ['tsSetup','tsDefinir','tsJogar','tsFim'].forEach(id=>{ const n=$(id); if(n) n.hidden=(id!==el); }); }
+  function poolDoTipo(t){ return (t&&BANCOS[t]) ? BANCOS[t] : FAMOSOS.concat(BANCOS.anime,BANCOS.filmes,BANCOS.futebol); }
+  function sorteiaDe(pool){ const u=Object.values(secretos); const livres=pool.filter(f=>!u.includes(f)); const p=livres.length?livres:pool; return p[Math.floor(Math.random()*p.length)]; }
+
+  $('tsComecar')&&$('tsComecar').addEventListener('click',()=>{
+    ordem=Array.from(sel); if(ordem.length<2){ alert('Precisa de pelo menos 2 pessoas! 🧠'); return; }
+    for(let i=ordem.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [ordem[i],ordem[j]]=[ordem[j],ordem[i]]; }
+    tempo=+$('tsTempo').value; secretos={}; resultados={}; idx=0; proximaVez();
+  });
+  function proximaVez(){
+    if(idx>=ordem.length) return fim();
+    const alvo=ordem[idx];
+    if(tipo!=='livre'){ secretos[alvo]=sorteiaDe(poolDoTipo(tipo)); iniciarTesta(alvo); }
+    else { mostra('tsDefinir'); $('tsAlvoNome').textContent=alvo; $('tsAlvoNome2').textContent=alvo; $('tsInput').value=''; }
+  }
+  $('tsSortear')&&$('tsSortear').addEventListener('click',()=>{ $('tsInput').value=sorteiaDe(poolDoTipo(tipo)); });
+  $('tsConfirmar')&&$('tsConfirmar').addEventListener('click',()=>{ const v=($('tsInput').value||'').trim(); if(!v){ alert('Digite ou sorteie um nome!'); return; } secretos[ordem[idx]]=v; iniciarTesta(ordem[idx]); });
+
+  function iniciarTesta(alvo){
+    mostra('tsJogar'); $('tsJogNome').textContent=alvo;
+    $('tsContagem').hidden=false; $('tsRevela').hidden=true;
+    let cd=10; $('tsCd').textContent=cd;
+    const c=setInterval(()=>{ cd--; if(cd<=0){ clearInterval(c); revelar(alvo); } else $('tsCd').textContent=cd; },1000);
+  }
+  function revelar(alvo){
+    $('tsContagem').hidden=true; $('tsRevela').hidden=false;
+    $('tsSecreto').textContent=secretos[alvo]; elapsed=0; mostraTempo();
+    tId=setInterval(()=>{ elapsed++; mostraTempo(); if(tempo>0 && elapsed>=tempo){ pararT(); registrar(false); } },1000);
+  }
+  function mostraTempo(){ const m=String(Math.floor(elapsed/60)).padStart(2,'0'), s=String(elapsed%60).padStart(2,'0'); const t=$('tsTimer'); if(t) t.textContent=m+':'+s; }
+  function pararT(){ if(tId){ clearInterval(tId); tId=null; } }
+  $('tsAcertou')&&$('tsAcertou').addEventListener('click',()=>{ pararT(); registrar(true); });
+  $('tsPulou')&&$('tsPulou').addEventListener('click',()=>{ pararT(); registrar(false); });
+  function registrar(ok){ resultados[ordem[idx]]={ok,tempo:elapsed}; if(ok && typeof confete==='function') confete(); idx++; proximaVez(); }
+  function fim(){
+    pararT(); mostra('tsFim');
+    const ok=ordem.filter(n=>resultados[n]&&resultados[n].ok).sort((a,b)=>resultados[a].tempo-resultados[b].tempo);
+    $('tsVencedor').textContent = ok.length ? ('🏆 '+ok[0]+' adivinhou mais rápido!') : '😅 Ninguém adivinhou dessa vez!';
+    const box=$('tsRanking'); box.innerHTML='';
+    ordem.forEach(n=>{ const r=resultados[n]; const d=document.createElement('div'); d.className='jg-time';
+      const info=r&&r.ok?('✅ ⏱️ '+r.tempo+'s'):'❌ não adivinhou';
+      d.innerHTML='<div class="nm">'+n+'</div><div class="membros">'+info+'</div>'; box.appendChild(d); });
+    if(typeof confete==='function') confete();
+  }
+  $('tsDeNovo')&&$('tsDeNovo').addEventListener('click',()=>{ mostra('tsSetup'); });
+})();
+
+/* =========================================================================
+   JOGO — Show do Milhão (até 3 participantes)
+   ========================================================================= */
+(function(){
+  const setup=$('smSetup'); if(!setup) return;
+  const ESCADA=[1000,2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,200000,300000,500000,1000000];
+  const SEG=[4,9]; // paradas seguras: 5.000 e 50.000
+  const PERG=[
+    {p:'Qual é a capital do Brasil?',o:['Rio de Janeiro','São Paulo','Brasília','Salvador'],c:2,n:1},
+    {p:'Quantos jogadores de cada time ficam em campo no futebol?',o:['9','10','11','12'],c:2,n:1},
+    {p:'Qual a cor da grama?',o:['Azul','Verde','Vermelho','Amarelo'],c:1,n:1},
+    {p:'Quantos dias tem uma semana?',o:['5','6','7','8'],c:2,n:1},
+    {p:'Qual animal faz "miau"?',o:['Cachorro','Gato','Vaca','Galo'],c:1,n:1},
+    {p:'Qual fruta é amarela e curva?',o:['Maçã','Banana','Uva','Melancia'],c:1,n:1},
+    {p:'Quantas cores tem a bandeira do Brasil?',o:['2','3','4','5'],c:2,n:1},
+    {p:'Em qual planeta nós vivemos?',o:['Marte','Terra','Vênus','Júpiter'],c:1,n:1},
+    {p:'Quanto é 2 + 2?',o:['3','4','5','22'],c:1,n:1},
+    {p:'Qual estação do ano faz mais calor?',o:['Inverno','Outono','Verão','Primavera'],c:2,n:1},
+    {p:'Quem pintou a Mona Lisa?',o:['Picasso','Leonardo da Vinci','Van Gogh','Michelangelo'],c:1,n:2},
+    {p:'Qual o menor país do mundo?',o:['Mônaco','Vaticano','Malta','San Marino'],c:1,n:2},
+    {p:'Qual planeta é conhecido como "planeta vermelho"?',o:['Vênus','Marte','Saturno','Netuno'],c:1,n:2},
+    {p:'Em que ano os portugueses chegaram ao Brasil?',o:['1500','1492','1822','1600'],c:0,n:2},
+    {p:'Qual é a moeda do Japão?',o:['Won','Iene','Yuan','Rúpia'],c:1,n:2},
+    {p:'Quem escreveu "Dom Casmurro"?',o:['José de Alencar','Machado de Assis','Jorge Amado','Graciliano Ramos'],c:1,n:2},
+    {p:'Qual é a capital da Argentina?',o:['Santiago','Buenos Aires','Montevidéu','Lima'],c:1,n:2},
+    {p:'Qual oceano banha o litoral brasileiro?',o:['Pacífico','Índico','Atlântico','Ártico'],c:2,n:2},
+    {p:'Quantos estados o Brasil tem (sem contar o DF)?',o:['24','25','26','27'],c:2,n:2},
+    {p:'Qual gás as plantas absorvem na fotossíntese?',o:['Oxigênio','Gás carbônico','Hidrogênio','Nitrogênio'],c:1,n:2},
+    {p:'Qual o maior osso do corpo humano?',o:['Fêmur','Úmero','Tíbia','Crânio'],c:0,n:3},
+    {p:'Qual elemento químico tem o símbolo "Au"?',o:['Prata','Ouro','Alumínio','Cobre'],c:1,n:3},
+    {p:'Em que ano o homem pisou na Lua pela 1ª vez?',o:['1959','1969','1975','1961'],c:1,n:3},
+    {p:'Quem criou a Teoria da Relatividade?',o:['Newton','Einstein','Tesla','Galileu'],c:1,n:3},
+    {p:'Qual é a capital da Austrália?',o:['Sydney','Melbourne','Camberra','Perth'],c:2,n:3},
+    {p:'Quantos corações tem um polvo?',o:['1','2','3','4'],c:2,n:3},
+    {p:'Quem foi o primeiro presidente do Brasil?',o:['Deodoro da Fonseca','Getúlio Vargas','Floriano Peixoto','Prudente de Morais'],c:0,n:3},
+    {p:'Qual o maior deserto quente do mundo?',o:['Gobi','Saara','Atacama','Kalahari'],c:1,n:3},
+    {p:'Qual a fórmula química da água?',o:['CO2','H2O','O2','NaCl'],c:1,n:3},
+    {p:'Qual o maior planeta do Sistema Solar?',o:['Saturno','Júpiter','Netuno','Terra'],c:1,n:3},
+    {p:'Qual é o oposto de "quente"?',o:['Frio','Molhado','Alto','Rápido'],c:0,n:1},
+    {p:'Quantas patas tem um cachorro?',o:['2','3','4','6'],c:2,n:1},
+    {p:'Quanto é 5 x 2?',o:['7','10','12','52'],c:1,n:1},
+    {p:'Qual animal é conhecido como o "rei da selva"?',o:['Elefante','Leão','Tigre','Urso'],c:1,n:1},
+    {p:'Em que mês é o Natal?',o:['Novembro','Dezembro','Janeiro','Outubro'],c:1,n:1},
+    {p:'Que parte do corpo usamos para enxergar?',o:['Nariz','Olhos','Orelhas','Boca'],c:1,n:1},
+    {p:'Qual o maior país do mundo em território?',o:['China','Estados Unidos','Rússia','Canadá'],c:2,n:2},
+    {p:'Quem comandou a frota que chegou ao Brasil em 1500?',o:['Cristóvão Colombo','Pedro Álvares Cabral','Vasco da Gama','Américo Vespúcio'],c:1,n:2},
+    {p:'Quantos continentes existem?',o:['5','6','7','8'],c:2,n:2},
+    {p:'Qual é a capital da França?',o:['Londres','Madri','Paris','Roma'],c:2,n:2},
+    {p:'Qual metal é atraído por ímãs?',o:['Ouro','Ferro','Alumínio','Cobre'],c:1,n:2},
+    {p:'Qual o idioma oficial do Brasil?',o:['Espanhol','Português','Inglês','Italiano'],c:1,n:2},
+    {p:'Em que ano começou a Segunda Guerra Mundial?',o:['1914','1939','1945','1929'],c:1,n:3},
+    {p:'Qual planeta é famoso pelos seus anéis?',o:['Júpiter','Saturno','Urano','Marte'],c:1,n:3},
+    {p:'Qual o símbolo químico do sódio?',o:['So','Na','Sd','S'],c:1,n:3},
+    {p:'Quantos ossos tem o corpo humano adulto?',o:['206','201','250','180'],c:0,n:3},
+    {p:'Qual é a montanha mais alta do mundo?',o:['K2','Monte Everest','Aconcágua','Kilimanjaro'],c:1,n:3},
+    {p:'Qual país sediou a Copa do Mundo de futebol de 2014?',o:['África do Sul','Brasil','Rússia','Alemanha'],c:1,n:3},
+    {p:'Qual a cor de uma banana madura?',o:['Verde','Amarela','Azul','Roxa'],c:1,n:1},
+    {p:'Quantos dedos temos em uma mão?',o:['4','5','6','10'],c:1,n:1},
+    {p:'Qual é o satélite natural da Terra?',o:['Sol','Lua','Marte','Vênus'],c:1,n:1},
+    {p:'Que som faz a vaca?',o:['Miau','Au au','Muu','Quá quá'],c:2,n:1},
+    {p:'Qual planeta é o mais próximo do Sol?',o:['Mercúrio','Vênus','Terra','Marte'],c:0,n:2},
+    {p:'Santos Dumont ficou famoso por ser?',o:['Pintor','Aviador','Escritor','Médico'],c:1,n:2},
+    {p:'Qual o maior animal do mundo?',o:['Elefante','Baleia-azul','Girafa','Tubarão-baleia'],c:1,n:2},
+    {p:'Em que país surgiu a pizza?',o:['França','Itália','Grécia','Espanha'],c:1,n:2},
+    {p:'Qual o planeta mais quente do Sistema Solar?',o:['Mercúrio','Vênus','Marte','Júpiter'],c:1,n:3},
+    {p:'Quem escreveu "A Origem das Espécies"?',o:['Newton','Charles Darwin','Einstein','Mendel'],c:1,n:3},
+    {p:'Qual é a capital do Canadá?',o:['Toronto','Vancouver','Ottawa','Montreal'],c:2,n:3},
+    {p:'Quantos lados tem um hexágono?',o:['5','6','7','8'],c:1,n:3}
+  ];
+  const fmt=n=>'R$ '+n.toLocaleString('pt-BR');
+  const fmtK=n=>n>=1e6?(n/1e6)+'M':(n/1e3)+'K';
+
+  let participantes=[], pIdx=0, resultados=[];
+  let idx=0, ajudas={}, roundP=[], premio=0, respondendo=false;
+
+  // setup: inputs de participantes (até 3)
+  function addLinha(valor){
+    const cont=$('smJogadores'); if(cont.children.length>=3) return;
+    const row=document.createElement('div'); row.className='sm-jog-row';
+    row.innerHTML='<input type="text" placeholder="Nome do participante" value="'+(valor||'')+'" maxlength="18"><button type="button" title="Remover">✕</button>';
+    row.querySelector('button').addEventListener('click',()=>{ if(cont.children.length>1) row.remove(); });
+    cont.appendChild(row);
+  }
+  addLinha('');
+  $('smAddJog')&&$('smAddJog').addEventListener('click',()=>addLinha(''));
+
+  function mostra(el){ ['smSetup','smJogo','smFimRodada','smFim'].forEach(id=>{ const n=$(id); if(n) n.hidden=(id!==el); }); }
+
+  $('smComecar')&&$('smComecar').addEventListener('click',()=>{
+    participantes=Array.from($('smJogadores').querySelectorAll('input')).map(i=>i.value.trim()).filter(Boolean);
+    if(!participantes.length){ alert('Coloque pelo menos 1 participante!'); return; }
+    resultados=[]; pIdx=0; iniciarRodada();
+  });
+
+  function pickPerguntas(){
+    const porNivel={1:[],2:[],3:[]}; PERG.forEach(q=>porNivel[q.n].push(q));
+    Object.keys(porNivel).forEach(k=>{ const a=porNivel[k]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } });
+    const usadas=new Set(), out=[];
+    for(let r=0;r<15;r++){
+      const nv=r<5?1:(r<10?2:3);
+      const esc=porNivel[nv].find(x=>!usadas.has(x)) || porNivel[nv][r%porNivel[nv].length];
+      usadas.add(esc); out.push(esc);
+    }
+    return out;
+  }
+  function iniciarRodada(){
+    idx=0; premio=0; ajudas={'50':true,'uni':true,'pula':true}; roundP=pickPerguntas();
+    $('smQuem').textContent='👤 '+participantes[pIdx];
+    mostra('smJogo'); render();
+  }
+  function render(){
+    respondendo=true;
+    $('smPremioAtual').textContent=fmt(idx>0?ESCADA[idx-1]:0);
+    // escada
+    const esc=$('smEscada'); esc.innerHTML='';
+    for(let r=14;r>=0;r--){ const s=document.createElement('span'); s.className='sm-rung'+(r===idx?' atual':'')+(SEG.includes(r)?' segura':'')+(r<idx?' feito':''); s.textContent=fmtK(ESCADA[r]); esc.appendChild(s); }
+    const q=roundP[idx];
+    $('smPergunta').textContent='('+(idx+1)+'/15) '+q.p;
+    $('smDica').hidden=true; $('smDica').textContent='';
+    const ops=$('smOps'); ops.innerHTML='';
+    q.o.forEach((txt,i)=>{ const b=document.createElement('button'); b.className='sm-op'; b.type='button';
+      b.innerHTML='<span class="letra">'+'ABCD'[i]+'</span> <span>'+txt+'</span>';
+      b.addEventListener('click',()=>responder(i,b)); ops.appendChild(b); });
+    $('smA5050').disabled=!ajudas['50']; $('smAUni').disabled=!ajudas['uni']; $('smAPula').disabled=!ajudas['pula'];
+  }
+  function responder(i,btn){
+    if(!respondendo) return; respondendo=false;
+    const q=roundP[idx]; const ops=$('smOps').querySelectorAll('.sm-op');
+    ops.forEach(b=>b.disabled=true);
+    ops[q.c].classList.add('certa');
+    if(i===q.c){
+      btn.classList.add('certa'); premio=ESCADA[idx];
+      setTimeout(()=>{ idx++; if(idx>=15){ terminarRodada(ESCADA[14],'🏆 MILIONÁRIO! Acertou tudo!'); } else render(); },1100);
+    } else {
+      btn.classList.add('errada');
+      const garant = idx>9?ESCADA[9]:(idx>4?ESCADA[4]:0);
+      setTimeout(()=>terminarRodada(garant,'❌ Errou! Levou '+fmt(garant)+'.'),1400);
+    }
+  }
+  $('smA5050')&&$('smA5050').addEventListener('click',()=>{
+    if(!ajudas['50']||!respondendo) return; ajudas['50']=false; $('smA5050').disabled=true;
+    const q=roundP[idx]; const ops=$('smOps').querySelectorAll('.sm-op');
+    const erradas=[0,1,2,3].filter(i=>i!==q.c); for(let i=erradas.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [erradas[i],erradas[j]]=[erradas[j],erradas[i]]; }
+    erradas.slice(0,2).forEach(i=>ops[i].classList.add('oculta'));
+  });
+  $('smAUni')&&$('smAUni').addEventListener('click',()=>{
+    if(!ajudas['uni']||!respondendo) return; ajudas['uni']=false; $('smAUni').disabled=true;
+    const q=roundP[idx]; const acham = Math.random()<0.8 ? q.c : [0,1,2,3].filter(i=>i!==q.c)[Math.floor(Math.random()*3)];
+    $('smDica').hidden=false; $('smDica').textContent='🎓 Os universitários acham que é a alternativa '+'ABCD'[acham]+' ("'+q.o[acham]+'").';
+  });
+  $('smAPula')&&$('smAPula').addEventListener('click',()=>{
+    if(!ajudas['pula']||!respondendo) return; ajudas['pula']=false;
+    const nv=roundP[idx].n; const usadas=new Set(roundP); const alt=PERG.find(x=>x.n===nv && !usadas.has(x));
+    if(alt){ roundP[idx]=alt; } render();
+  });
+  $('smParar')&&$('smParar').addEventListener('click',()=>{
+    if(!respondendo) return; const g=idx>0?ESCADA[idx-1]:0;
+    terminarRodada(g,'🛑 Parou e levou '+fmt(g)+'!');
+  });
+  function terminarRodada(valor,msg){
+    respondendo=false; resultados.push({nome:participantes[pIdx],valor});
+    if(valor>=ESCADA[14] && typeof confete==='function') confete();
+    $('smResultadoTit').textContent=participantes[pIdx];
+    $('smResultadoMsg').textContent=msg;
+    $('smProximo').textContent = (pIdx+1<participantes.length) ? '➡️ Próximo participante' : '🏁 Ver resultado final';
+    mostra('smFimRodada');
+  }
+  $('smProximo')&&$('smProximo').addEventListener('click',()=>{
+    pIdx++; if(pIdx<participantes.length) iniciarRodada(); else placarFinal();
+  });
+  function placarFinal(){
+    mostra('smFim');
+    const ord=resultados.slice().sort((a,b)=>b.valor-a.valor);
+    $('smCampeao').textContent = ord.length && ord[0].valor>0 ? ('🏆 '+ord[0].nome+' — '+fmt(ord[0].valor)) : '😅 Ninguém pontuou!';
+    const box=$('smPlacarFinal'); box.innerHTML='';
+    ord.forEach((r,i)=>{ const d=document.createElement('div'); d.className='jg-time'+(i===0&&r.valor>0?' vez':'');
+      d.innerHTML='<div class="nm">'+(i===0?'🥇 ':(i===1?'🥈 ':(i===2?'🥉 ':'')))+r.nome+'</div><div class="pt" style="font-size:1.1rem">'+fmt(r.valor)+'</div>'; box.appendChild(d); });
+    if(typeof confete==='function') confete();
+  }
+  $('smDeNovo')&&$('smDeNovo').addEventListener('click',()=>{ mostra('smSetup'); });
+})();
+
+/* =========================================================================
+   JOGO — Stop / Adedonha
+   ========================================================================= */
+(function(){
+  const setup=$('stSetup'); if(!setup) return;
+  const CATS=['Nome','Animal','Cor','Comida','Objeto','Cidade ou País','Marca','Profissão','Filme/Série','Parte do corpo','Fruta','Famoso'];
+  const LETRAS='ABCDEFGHIJLMNOPRSTUV'.split('');
+  let jogadores=[], sel=new Set(), usadas=[], letra='', tempo=90, restante=0, tId=null, totais={}, rodadaJs=[];
+
+  (function(){ const box=$('stCats'); if(box){ box.innerHTML=''; CATS.forEach((c,i)=>{ const l=document.createElement('label'); l.innerHTML='<input type="checkbox" value="'+c+'"'+(i<8?' checked':'')+'> '+c; box.appendChild(l); }); } })();
+
+  carregarConfirmados().then(n=>{ jogadores=n.slice(); jogadores.forEach(x=>sel.add(x)); renderChips(); });
+  function renderChips(){
+    const box=$('stPessoas'); if(!box) return;
+    if(!jogadores.length){ box.innerHTML='<span class="jg-info">Sem confirmados — adicione nomes (ou jogue sem placar).</span>'; return; }
+    box.innerHTML='';
+    jogadores.forEach(n=>{ const b=document.createElement('button'); b.type='button'; b.className='jg-chip'+(sel.has(n)?' on':''); b.textContent=n;
+      b.addEventListener('click',()=>{ sel.has(n)?sel.delete(n):sel.add(n); b.classList.toggle('on'); }); box.appendChild(b); });
+  }
+  $('stAdd')&&$('stAdd').addEventListener('click',()=>{ const i=$('stNovo'); const v=(i.value||'').trim(); if(!v)return; if(!jogadores.some(p=>p.toLowerCase()===v.toLowerCase())) jogadores.push(v); sel.add(v); i.value=''; renderChips(); });
+  $('stNovo')&&$('stNovo').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); $('stAdd').click(); } });
+
+  function mostra(el){ ['stSetup','stJogo','stPontos','stFim'].forEach(id=>{ const n=$(id); if(n) n.hidden=(id!==el); }); }
+  function catsSel(){ const v=Array.from(document.querySelectorAll('#stCats input:checked')).map(c=>c.value); return v.length?v:CATS.slice(0,8); }
+  function sorteiaLetra(){ let livres=LETRAS.filter(l=>!usadas.includes(l)); if(!livres.length){ usadas=[]; livres=LETRAS.slice(); } const L=livres[Math.floor(Math.random()*livres.length)]; usadas.push(L); return L; }
+
+  $('stComecar')&&$('stComecar').addEventListener('click',()=>{ tempo=+$('stTempo').value; totais={}; Array.from(sel).forEach(n=>totais[n]=0); novaRodada(); });
+  function novaRodada(){
+    letra=sorteiaLetra(); $('stLetra').textContent=letra;
+    const ul=$('stCatsLista'); ul.innerHTML=''; catsSel().forEach(c=>{ const li=document.createElement('li'); li.textContent=c; ul.appendChild(li); });
+    mostra('stJogo'); pararT(); restante=tempo; mostraT();
+    if(tempo>0){ tId=setInterval(()=>{ restante--; mostraT(); if(restante<=0){ pararT(); parar(); } },1000); }
+    else { let up=0; $('stTimer').textContent='00:00'; tId=setInterval(()=>{ up++; const m=String(Math.floor(up/60)).padStart(2,'0'),s=String(up%60).padStart(2,'0'); $('stTimer').textContent=m+':'+s; },1000); }
+  }
+  function mostraT(){ if(tempo<=0)return; const m=String(Math.floor(restante/60)).padStart(2,'0'),s=String(restante%60).padStart(2,'0'); $('stTimer').textContent=m+':'+s; }
+  function pararT(){ if(tId){ clearInterval(tId); tId=null; } }
+  $('stStop')&&$('stStop').addEventListener('click',parar);
+  function parar(){
+    pararT(); if(typeof confete==='function') confete();
+    $('stLetraFim').textContent=letra;
+    rodadaJs=Array.from(sel);
+    $('stPontosInfo').style.display = rodadaJs.length?'':'none';
+    const box=$('stPlacarEdit'); box.innerHTML='';
+    rodadaJs.forEach((n,i)=>{ if(!(n in totais)) totais[n]=0; const r=document.createElement('div'); r.className='st-row';
+      const sp=document.createElement('span'); sp.textContent=n; const inp=document.createElement('input'); inp.type='number'; inp.min='0'; inp.value='0'; inp.dataset.i=i;
+      r.appendChild(sp); r.appendChild(inp); box.appendChild(r); });
+    mostra('stPontos');
+  }
+  function somar(){ document.querySelectorAll('#stPlacarEdit .st-row input').forEach(inp=>{ const n=rodadaJs[+inp.dataset.i]; if(n && (n in totais)) totais[n]+=(+inp.value||0); }); }
+  $('stProxima')&&$('stProxima').addEventListener('click',()=>{ somar(); novaRodada(); });
+  $('stEncerrar')&&$('stEncerrar').addEventListener('click',()=>{ somar(); fim(); });
+  function fim(){
+    mostra('stFim');
+    const js=Object.keys(totais).sort((a,b)=>totais[b]-totais[a]);
+    $('stCampeao').textContent = js.length && totais[js[0]]>0 ? ('🏆 '+js[0]+' — '+totais[js[0]]+' pts') : '✋ Fim de jogo!';
+    const box=$('stPlacarFinal'); box.innerHTML='';
+    if(!js.length){ box.innerHTML='<p class="jg-info" style="text-align:center">Sem placar (jogaram sem cadastrar nomes). Valeu a diversão! 🎉</p>'; }
+    js.forEach((n,i)=>{ const d=document.createElement('div'); d.className='jg-time'+(i===0&&totais[n]>0?' vez':''); d.innerHTML='<div class="nm">'+(i===0&&totais[n]>0?'🥇 ':'')+n+'</div><div class="pt">'+totais[n]+'</div>'; box.appendChild(d); });
+    if(typeof confete==='function') confete();
+  }
+  $('stDeNovo')&&$('stDeNovo').addEventListener('click',()=>{ mostra('stSetup'); });
+})();
+
+/* =========================================================================
+   JOGO — 2 Verdades e 1 Mentira
+   ========================================================================= */
+(function(){
+  const setup=$('tmSetup'); if(!setup) return;
+  let jogadores=[], sel=new Set(), ordem=[], idx=0, scores={}, frases=[], mentira=0;
+
+  carregarConfirmados().then(n=>{ jogadores=n.slice(); jogadores.forEach(x=>sel.add(x)); renderChips(); });
+  function renderChips(){
+    const box=$('tmPessoas'); if(!box) return;
+    if(!jogadores.length){ box.innerHTML='<span class="jg-info">Sem confirmados — adicione nomes abaixo 👇</span>'; upSel(); return; }
+    box.innerHTML='';
+    jogadores.forEach(n=>{ const b=document.createElement('button'); b.type='button'; b.className='jg-chip'+(sel.has(n)?' on':''); b.textContent=n;
+      b.addEventListener('click',()=>{ sel.has(n)?sel.delete(n):sel.add(n); b.classList.toggle('on'); upSel(); }); box.appendChild(b); });
+    upSel();
+  }
+  function upSel(){ const e=$('tmSelInfo'); if(e) e.textContent=sel.size+' selecionado'+(sel.size===1?'':'s'); }
+  $('tmAdd')&&$('tmAdd').addEventListener('click',()=>{ const i=$('tmNovo'); const v=(i.value||'').trim(); if(!v)return; if(!jogadores.some(p=>p.toLowerCase()===v.toLowerCase())) jogadores.push(v); sel.add(v); i.value=''; renderChips(); });
+  $('tmNovo')&&$('tmNovo').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); $('tmAdd').click(); } });
+
+  function mostra(el){ ['tmSetup','tmEscrever','tmAdivinhar','tmFim'].forEach(id=>{ const n=$(id); if(n) n.hidden=(id!==el); }); }
+  $('tmComecar')&&$('tmComecar').addEventListener('click',()=>{
+    ordem=Array.from(sel); if(ordem.length<2){ alert('Precisa de pelo menos 2 pessoas! 🕵️'); return; }
+    for(let i=ordem.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [ordem[i],ordem[j]]=[ordem[j],ordem[i]]; }
+    scores={}; ordem.forEach(n=>scores[n]=0); idx=0; proxima();
+  });
+  function proxima(){
+    if(idx>=ordem.length) return fim();
+    const q=ordem[idx]; $('tmQuem').textContent=q; $('tmQuem2').textContent=q;
+    $('tmF0').value=''; $('tmF1').value=''; $('tmF2').value='';
+    Array.from(document.getElementsByName('tmLie')).forEach(r=>r.checked=false);
+    mostra('tmEscrever');
+  }
+  $('tmPronto')&&$('tmPronto').addEventListener('click',()=>{
+    const f=[$('tmF0').value.trim(),$('tmF1').value.trim(),$('tmF2').value.trim()];
+    if(f.some(x=>!x)){ alert('Preencha as 3 frases!'); return; }
+    const m=Array.from(document.getElementsByName('tmLie')).find(r=>r.checked);
+    if(!m){ alert('Marque qual é a MENTIRA!'); return; }
+    frases=f; mentira=+m.value;
+    const mapa=[0,1,2]; for(let i=mapa.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [mapa[i],mapa[j]]=[mapa[j],mapa[i]]; }
+    $('tmQuem3').textContent=ordem[idx];
+    const box=$('tmFrases'); box.innerHTML='';
+    mapa.forEach((orig,pos)=>{ const d=document.createElement('div'); d.className='tm-card'; d.dataset.orig=orig; d.textContent=(pos+1)+') '+frases[orig]; box.appendChild(d); });
+    $('tmResultado').hidden=true; mostra('tmAdivinhar');
+  });
+  $('tmRevelar')&&$('tmRevelar').addEventListener('click',()=>{
+    document.querySelectorAll('#tmFrases .tm-card').forEach(d=>{ d.classList.add(+d.dataset.orig===mentira?'mentira':'verdade'); });
+    $('tmResultado').hidden=false;
+  });
+  $('tmEnganou')&&$('tmEnganou').addEventListener('click',()=>{ scores[ordem[idx]]++; if(typeof confete==='function') confete(); idx++; proxima(); });
+  $('tmDescobriram')&&$('tmDescobriram').addEventListener('click',()=>{ idx++; proxima(); });
+  function fim(){
+    mostra('tmFim');
+    const js=ordem.slice().sort((a,b)=>scores[b]-scores[a]);
+    $('tmCampeao').textContent = js.length && scores[js[0]]>0 ? ('🏆 '+js[0]+' enganou mais! ('+scores[js[0]]+'x)') : '🤝 Ninguém enganou a galera!';
+    const box=$('tmPlacar'); box.innerHTML='';
+    js.forEach((n,i)=>{ const d=document.createElement('div'); d.className='jg-time'+(i===0&&scores[n]>0?' vez':''); d.innerHTML='<div class="nm">'+(i===0&&scores[n]>0?'🥇 ':'')+n+'</div><div class="membros">enganou '+scores[n]+'x</div>'; box.appendChild(d); });
+    if(typeof confete==='function') confete();
+  }
+  $('tmDeNovo')&&$('tmDeNovo').addEventListener('click',()=>{ mostra('tmSetup'); });
 })();
 </script>
 </body>
