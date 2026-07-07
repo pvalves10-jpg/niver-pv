@@ -2,7 +2,7 @@
    Estratégia: network-first para arquivos do próprio site (sempre pega a
    versão mais nova quando online) e cache como reserva (funciona offline).
    Chamadas externas (planilha/gviz, Apps Script, Open-Meteo, uploads) passam direto. */
-const CACHE = 'churrasco-pv-v1';
+const CACHE = 'churrasco-pv-v2';
 const ESSENCIAIS = [
   './', 'index.html', 'manifest.json',
   'assets/hero.jpg?v=2', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'

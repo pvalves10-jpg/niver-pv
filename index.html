@@ -305,6 +305,9 @@ footer{text-align:center;color:var(--texto-suave);font-size:.78rem;padding:10px 
    Se o JS falhar, o catch do roteador revela tudo (degrada com segurança). */
 [data-page]{display:none}
 [data-page].ativo{display:block}
+/* Garante que o atributo [hidden] sempre esconda, mesmo em elementos com display de classe
+   (ex.: #jgHub .jogos-grid, botões .btn) — senão os jogos não trocam de tela. */
+[hidden]{display:none !important}
 
 /* =========================================================
    JOGO — Imagem & Ação
